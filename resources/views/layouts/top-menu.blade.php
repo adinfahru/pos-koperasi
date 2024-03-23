@@ -1,4 +1,4 @@
-<header class="z-10 py-4 bg-white shadow-md">
+<header class="z-10 py-4 bg-white">
     <div class="container flex justify-between items-center px-6 mx-auto h-full text-purple-600 md:justify-end">
         <!-- Mobile hamburger -->
         <button class="p-1 mr-5 -ml-1 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple" @click="toggleSideMenu" aria-label="Menu">
