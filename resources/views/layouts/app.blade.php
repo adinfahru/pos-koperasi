@@ -14,7 +14,7 @@
 </head>
 <body>
 <div
-    class="flex h-screen bg-gray-50"
+    class="flex h-screen"
     :class="{ 'overflow-hidden': isSideMenuOpen }"
 >
     <!-- Desktop sidebar -->

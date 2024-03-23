@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,6 +18,8 @@ Route::middleware('auth')->group(function () {
     Route::view('about', 'about')->name('about');
 
     Route::get('users', [UserController::class, 'index'])->name('users.index');
+      
+    Route::resource('products', ProductsController::class);
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
