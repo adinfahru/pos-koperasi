@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::get('users', [UserController::class, 'index'])->name('users.index');
       
     Route::resource('products', ProductsController::class);
+    Route::view('report-admin', 'report-admin')->name('report-admin');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
