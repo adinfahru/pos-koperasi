@@ -1,10 +1,10 @@
 <x-app-layout>
-    <div class="p-4 mt-4 bg-white rounded-lg shadow-xs">
+    <div class="p-4 mt-4 bg-white rounded-lg shadow-xs border">
         <div class="flex items-center justify-end mb-6">
         <a href="{{ route('products.create') }}" class="rounded-md bg-indigo-600 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add Product</a>
         </div>
 
-        <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs">
+        <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs border">
             <div class="w-full overflow-x-auto shadow-xs">
                 <table class="w-full whitespace-no-wrap">
                     <thead>
