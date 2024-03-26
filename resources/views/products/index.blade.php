@@ -20,7 +20,7 @@
             <div class="w-full overflow-x-auto shadow-xs">
                 <table class="w-full whitespace-no-wrap">
                     <thead>
-                        <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border">
+                        <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 bg-gray-200 uppercase border">
                             <th class="px-4 py-3">Nama Produk</th>
                             <th class="px-4 py-3">Stok</th>
                             <th class="px-4 py-3">Harga Jual</th>
