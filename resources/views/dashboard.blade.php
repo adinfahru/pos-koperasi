@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-    {{ __('Welcome!, ') }} {{ Auth::user()->name }} {{ __(' Dashboard') }}
+    {{ __('Welcome!, ') }} {{ Auth::user()->name }}
     </x-slot>
 
    
