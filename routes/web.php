@@ -23,11 +23,8 @@ Route::middleware('auth')->group(function () {
     Route::get('admin', [AdminController::class, 'index'])->name('admin.index')->
     middleware(['auth', 'admin']);;;
 
-      
     Route::resource('products', ProductsController::class)->
     middleware(['auth', 'admin']);;;
-
-    
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -35,9 +32,6 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-
-// Route::get('admin/index', [AdminController::class, 'index'])->
-//     middleware(['auth', 'admin']);
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/index', [AdminController::class, 'index']);
