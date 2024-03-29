@@ -1,4 +1,4 @@
-<header class="z-10 py-4 bg-white">
+<header class="z-10 py-4 bg-white border-b shadow-md">
     <div class="container flex justify-between items-center px-6 mx-auto h-full text-purple-600 md:justify-end">
         <!-- Mobile hamburger -->
         <button class="p-1 mr-5 -ml-1 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple" @click="toggleSideMenu" aria-label="Menu">
@@ -15,12 +15,6 @@
                 aria-label="Account" 
                 aria-haspopup="true"
                 >
-                <!-- <img
-                    class="object-cover w-8 h-8 rounded-full"
-                    src="https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=aa3a807e1bbdfd4364d1f449eaa96d82"
-                    alt=""
-                    aria-hidden="true"
-                  /> -->
                 <span class="font-semibold text-cyan-500 text-sm ml-4">{{ Auth::user()->name }}</span>
                 </button>
             </x-slot>
