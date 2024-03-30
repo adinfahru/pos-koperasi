@@ -1,6 +1,6 @@
 <x-guest-layout>
-    <div class="flex flex-col overflow-y-auto md:flex-row">
-        <div class="h-32 md:h-auto md:w-1/2 shadow-2xl">
+    <div class="flex flex-col overflow-y-auto md:flex-row sm:flex-col sm:gap-10">
+        <div class="md:h-auto md:w-1/2 shadow-2xl rounded-xl sm:shadow-md">
             <img aria-hidden="true" class="object-cover w-full h-full rounded-lg"
                  src="{{ asset('images/Koperasi-Logo.png') }}"
                  alt="Office"/>
@@ -55,14 +55,22 @@
 
                 <hr class="my-8"/>
 
-                @if (Route::has('password.request'))
-                    <p class="mt-4">
+                <div class="flex flex-col items-center gap-4">
+                    
+                    @if (Route::has('password.request'))
+                    <p class="">
                         <a class="text-sm font-medium text-primary-600 hover:underline"
                            href="{{ route('password.request') }}">
                             {{ __('Forgot your password?') }}
                         </a>
                     </p>
-                @endif
+                    @endif
+
+                    <a href="/" class="text-white bg-purple-600 hover:bg-purple-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 dark:bg-blue-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">
+                        Home
+                    </a>
+
+                </div>
             </div>
         </div>
     </div>
