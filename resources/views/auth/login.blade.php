@@ -58,16 +58,17 @@
                     <div class="flex mt-6 text-sm">
                         <label class="flex items-center dark:text-gray-400">
                             <input type="checkbox" name="remember"
-                                class="text-indigo-800 form-checkbox focus:border-purple-400 focus:outline-none focus:shadow-outline-purple">
+                                class="text-indigo-800 form-checkbox focus:border-indigo-800 focus:outline-none focus:shadow-outline-indigo">
                             <span class="ml-2">{{ __('Remember me') }}</span>
                         </label>
                     </div>
 
                     <div class="mt-4">
-                        <x-primary-button class="block w-full">
+                        <x-primary-button class="block w-full bg-indigo-700 text-indigo-100 hover:bg-indigo-900">
                             {{ __('Log in') }}
                         </x-primary-button>
                     </div>
+                    
                 </form>
 
                 <hr class="my-8" />
@@ -84,7 +85,7 @@
                     @endif
 
                     <a href="/"
-                        class="text-white bg-purple-600 hover:bg-purple-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 dark:bg-blue-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">
+                        class="text-white bg-indigo-800 hover:bg-indigo-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 dark:bg-indigo-800 dark:hover:bg-indigo-800 focus:outline-none dark:focus:ring-indigo-800">
                         Home
                     </a>
 
