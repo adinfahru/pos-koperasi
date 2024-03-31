@@ -20,7 +20,7 @@ class Admin
         if(Auth::user()->role !== 'admin')
         
         {
-            return redirect('/');
+            return redirect('dashboard');
         } 
 
         return $next($request);
