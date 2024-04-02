@@ -7,11 +7,8 @@
     @vite('resources/css/app.css')
     <title>Pos Koperasi</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
 </head>
+
 <body class="antialiased">
     <nav>
         <div class="justify-center w-full mx-auto">
@@ -43,7 +40,7 @@
         <hr>
         <div class="justify-center w-full mx-auto bg-indigo-800">
             <div class="flex flex-col w-full px-8 py-2.5 mx-auto md:px-12 md:items-center md:justify-between md:flex-row lg:px-32 max-w-7xl">
-            <p class="text-xs text-white">
+                <p class="text-xs text-white">
                     Jl. Telekomunikasi No. 5, Terusan Buah Batu, Bandung, 40257
                 </p>
             </div>
@@ -69,14 +66,14 @@
                         <div class="flex h-full">
                             <div class="flex flex-col justify-center p-8 border bg-indigo-50 rounded-3xl max-w-none">
                                 <h2 class="font-medium text-gray-900">
-                                Welcome to Koperasi Jaya, your gateway to economic prosperity and community empowerment. 
-                                Our platform stands as a beacon of hope, championing the ideals of shared prosperity and collaborative growth. 
-                                With the tagline "Ekonomi Sejahtera Bersama Koperasi Jaya," we are committed to fostering economic well-being and 
-                                ensuring a prosperous future for all.
+                                    Welcome to Koperasi Jaya, your gateway to economic prosperity and community empowerment.
+                                    Our platform stands as a beacon of hope, championing the ideals of shared prosperity and collaborative growth.
+                                    With the tagline "Ekonomi Sejahtera Bersama Koperasi Jaya," we are committed to fostering economic well-being and
+                                    ensuring a prosperous future for all.
                                 </h2>
                                 <p class="mt-4 text-sm font-medium text-gray-500 text-pretty">
-                                Join us in our mission to build a brighter tomorrow, where economic prosperity is not just a dream but a reality for all. 
-                                Together, let's create a future of shared success and prosperity. Ekonomi Sejahtera Bersama Koperasi Jaya!
+                                    Join us in our mission to build a brighter tomorrow, where economic prosperity is not just a dream but a reality for all.
+                                    Together, let's create a future of shared success and prosperity. Ekonomi Sejahtera Bersama Koperasi Jaya!
                                 </p>
                             </div>
                         </div>

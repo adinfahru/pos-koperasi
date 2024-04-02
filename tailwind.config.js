@@ -162,7 +162,7 @@ module.exports = {
                 xl: "36rem",
             },
             fontFamily: {
-                sans: ["Inter", ...defaultTheme.fontFamily.sans],
+                sans: ["Plus Jakarta Sans", ...defaultTheme.fontFamily.sans],
             },
         },
     },
