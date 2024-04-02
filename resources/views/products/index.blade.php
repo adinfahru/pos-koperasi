@@ -1,19 +1,9 @@
 <x-app-layout>
-    @if(session('success'))
-    <div id="alert" class="text-sm mt-4 bg-green-300 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
-        <strong class="font-bold">Success!</strong>
-        <span class="block sm:inline">{{ session('success') }}</span>
-        <button onclick="closeAlert()" class="absolute top-0 bottom-0 right-0 px-4 py-3">
-            <svg class="fill-current h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <title>Close</title>
-                <path d="M14.348 14.849a1 1 0 0 1-1.497 1.323l-3.045-3.334-3.045 3.334a1 1 0 1 1-1.497-1.323l3.545-3.875a1 1 0 0 1 1.497 0l3.545 3.875z" />
-            </svg>
-        </button>
-    </div>
-    @endif
     <div class="p-4 mt-4 bg-white rounded-lg shadow-xs border">
         <div class="flex items-center justify-end mb-6">
-            <a href="{{ route('products.create') }}" class="rounded-md bg-indigo-600 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add Product</a>
+            <a href="{{ route('products.create') }}" class="rounded-md bg-indigo-600 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+            Add Product
+        </a>
         </div>
 
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs border">
@@ -83,10 +73,4 @@
             </div>
         </div>
     </div>
-    <script>
-        function closeAlert() {
-            var alert = document.getElementById('alert');
-            alert.style.display = 'none';
-        }
-    </script>
 </x-app-layout>
