@@ -49,8 +49,29 @@ class UserController extends Controller
 
         event(new Registered($user));
 
-
-
         return redirect(route('users.index', absolute: true));
+    }
+
+    public function edit (string $id)
+    {
+        $user = User::findOrFail($id);
+        return view('users.edit', compact('user'));
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->role = $request->role;
+        $user->save();
+        return redirect()->route('users.index')->with('success', 'Users updated successfully');
+    }
+
+    public function destroy(string $id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect()->route('users.index')->with('success', 'Users deleted successfully');
     }
 }

@@ -7,53 +7,14 @@
     @vite('resources/css/app.css')
     <title>Pos Koperasi</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
 </head>
-<body class="antialiased">
-    <nav>
-        <div class="justify-center w-full mx-auto">
-            <div class="flex flex-col w-full px-8 py-2 mx-auto md:px-12 md:items-center md:justify-between md:flex-row lg:px-32 max-w-7xl">
-                <div class="flex flex-row items-center justify-between text-black">
-                    <a class="inline-flex items-center gap-3 text-xl font-bold tracking-tight text-indigo-800" href="/">
-                        <span>Koperasi Jaya</span>
-                    </a>
-                </div>
-                <div class="flex-col items-center gap-16 text-sm font-medium text-indigo-800 md:flex md:flex-row lg:p-0 md:mt-0">
-                    <a class="hover:text-black focus:outline-none focus:text-gray-500 md:ml-auto" href="#_">Beranda</a>
-                    <a class="hover:text-black focus:outline-none focus:text-gray-500 md:ml-auto" href="#_">Profile</a>
-                    <a class="hover:text-black focus:outline-none focus:text-gray-500 md:ml-auto" href="#_">Info Berita</a>
-                    <a class="hover:text-black focus:outline-none focus:text-gray-500 md:ml-auto" href="#_">Produk</a>
-                    <a class="hover:text-black focus:outline-none focus:text-gray-500 md:ml-auto" href="#_">Bantuan</a>
-                    <a href="{{route('login')}}">
-                        <button type="button" class="rounded-md bg-indigo-800 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                            Masuk
-                        </button>
-                    </a>
-                    <a href="{{route('register')}}">
-                        <button type="button" class="rounded-md bg-indigo-800 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                            Register
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="justify-center w-full mx-auto bg-indigo-800">
-            <div class="flex flex-col w-full px-8 py-2.5 mx-auto md:px-12 md:items-center md:justify-between md:flex-row lg:px-32 max-w-7xl">
-            <p class="text-xs text-white">
-                    Jl. Telekomunikasi No. 5, Terusan Buah Batu, Bandung, 40257
-                </p>
-            </div>
-        </div>
-    </nav>
 
+<body class="antialiased">
+    @include('layouts.navbar')
     <section>
         <div class="px-8 py-16 mx-auto md:px-12 lg:px-32 max-w-7xl">
             <div>
-                <h1 class="text-xl font-semibold tracking-tighter text-indigo-900 lg:text-6xl text-balance">
+                <h1 class="text-xl font-bold tracking-tighter text-indigo-900 lg:text-6xl text-balance">
                     Ekonomi Sejahtera
                     <span class="text-indigo-800">Bersama Koperasi Jaya</span>
                 </h1>
@@ -69,14 +30,14 @@
                         <div class="flex h-full">
                             <div class="flex flex-col justify-center p-8 border bg-indigo-50 rounded-3xl max-w-none">
                                 <h2 class="font-medium text-gray-900">
-                                Welcome to Koperasi Jaya, your gateway to economic prosperity and community empowerment. 
-                                Our platform stands as a beacon of hope, championing the ideals of shared prosperity and collaborative growth. 
-                                With the tagline "Ekonomi Sejahtera Bersama Koperasi Jaya," we are committed to fostering economic well-being and 
-                                ensuring a prosperous future for all.
+                                    Welcome to Koperasi Jaya, your gateway to economic prosperity and community empowerment.
+                                    Our platform stands as a beacon of hope, championing the ideals of shared prosperity and collaborative growth.
+                                    With the tagline "Ekonomi Sejahtera Bersama Koperasi Jaya," we are committed to fostering economic well-being and
+                                    ensuring a prosperous future for all.
                                 </h2>
                                 <p class="mt-4 text-sm font-medium text-gray-500 text-pretty">
-                                Join us in our mission to build a brighter tomorrow, where economic prosperity is not just a dream but a reality for all. 
-                                Together, let's create a future of shared success and prosperity. Ekonomi Sejahtera Bersama Koperasi Jaya!
+                                    Join us in our mission to build a brighter tomorrow, where economic prosperity is not just a dream but a reality for all.
+                                    Together, let's create a future of shared success and prosperity. Ekonomi Sejahtera Bersama Koperasi Jaya!
                                 </p>
                             </div>
                         </div>
