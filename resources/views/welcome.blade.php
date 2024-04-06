@@ -8,10 +8,10 @@
     <title>Pos Koperasi Jaya</title>
 </head>
 
-<body class="antialiased">
+<body class="antialiased;">
     @include('layouts.navbar')
     <section>
-        <div class="px-8 py-16 mx-auto md:px-12 lg:px-32 max-w-7xl">
+        <div class="px-8 py-16 mx-auto md:px-12 lg:px-32 max-w-7xl" style="margin-top:70px;">
             <div>
                 <h1 class="text-xl font-bold tracking-tighter text-indigo-900 lg:text-6xl text-balance">
                     Ekonomi Sejahtera,
@@ -22,7 +22,7 @@
                 <div class="grid gap-4 mt-10 mb-28 lg:grid-flow-col-dense lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-1">
                     <div class="max-w-lg min-w-full mx-auto">
                         <div class="flex h-full">
-                            <div class="flex flex-col justify-center p-8 border bg-indigo-800 rounded-3xl max-w-none">
+                            <div class="flex flex-col justify-center p-8 border rounded-3xl max-w-none" style="background: #4338ca;">
                                 <h2 class="font-medium text-white font-semibold text-justify">
                                     Koperasi Jaya didirikan pada tanggal 8 Maret 2024 oleh mahasiswa Universitas Telkom dari program studi S1 Sistem Informasi, yaitu Aria Riezki Fhadila, Josia Fortino Pakpahan, Kevin Fritz Angelo, Mohammad Fahrudin, M Hasbi Asshiddiqqi, M. Rayhan Maulana Al-Rasyid, dan R. Rama Ahmad Waliyya.
                                     Koperasi ini disahkan dengan Akte Badan Hukum No.9999 pada tanggal 10 Maret 2024 sebagai Koperasi Serba Usaha. Anggota dari Koperasi Jaya adalah karyawan tetap yang terdaftar pada BUMD.
@@ -41,8 +41,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="justify-center w-full mx-auto">
-                    <div class="bg-indigo-800 flex flex-col w-full px-8 py-6 mx-auto">
+                <div class="justify-center">
+                    <div class="flex flex-col px-8 py-6" style="background: linear-gradient(to right, #4338ca, #5a67d8); width:800%; margin-left: -350%;">
                         <div>
                             <div class="px-8 py-2 mx-auto md:px-12 lg:px-4 max-w-7xl">
                                 <div class="grid grid-cols-2 text-sm font-medium text-center text-gray-500 gap-x-6 gap-y-12 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16 text-balance">
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                <h1 class=" mt-6 text-xl font-semibold tracking-tighter text-indigo-900 lg:text-6xl text-balance">
+                <h1 class=" mt-6 text-xl font-semibold tracking-tighter text-indigo-900 lg:text-6xl text-balance" style="margin-top:70px;">
                     SEMUA KEBUTUHAN ANDA ADA DI
                     <span class="text-indigo-800 font-bold">Koperasi Jaya</span>
                 </h1>
@@ -103,13 +103,12 @@
                 <div class="grid gap-2 lg:grid-flow-col-dense lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-3">
                     <div class="max-w-lg min-w-full mx-auto lg:col-start-3">
                         <div class="flex h-full">
-                            <div class="flex flex-col justify-center p-8 border bg-indigo-50  rounded-3xl max-w-none">
-                                <h2 class="font-medium text-gray-900">Dashboard Pembelian dan Penjualan</h2>
-                                <p class="mt-4 text-sm font-medium text-gray-500 text-pretty">
-                                    You must give appropriate credit to the original creator of the
-                                    work. This typically includes providing the name of the author
-                                    or licensor, a link to the original work, and indicating if
-                                    changes were made.
+                            <div class="flex flex-col justify-center p-8 border  rounded-3xl max-w-none" style="background: #4338ca;">
+                                <h2 class="font-bold text-white" style="font-size: 20px;">Dashboard Pembelian dan Penjualan</h2>
+                                <p class="mt-4 text-sm font-medium text-white text-pretty" style="text-align:justify;">
+                                    Dashboard Pembelian dan Penjualan menyediakan akses cepat ke informasi terkini
+                                    mengenai transaksi terakhir, riwayat pembelian, serta penjualan yang memungkinkan manajer
+                                    untuk melihat rincian transaksi secara detail dan menganalisis tren pembelian dan penjualan.
                                 </p>
                             </div>
                         </div>
@@ -125,16 +124,14 @@
                 <div class="grid gap-2 lg:grid-flow-col-dense lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-3">
                     <div class="max-w-lg min-w-full mx-auto">
                         <div class="flex h-full">
-                            <div class="flex flex-col justify-center p-8 border bg-indigo-50  rounded-3xl max-w-none">
-                                <h2 class="font-medium text-gray-900">
+                            <div class="flex flex-col justify-center p-8 border rounded-3xl max-w-none" style="background: #4338ca;">
+                                <h2 class="font-bold text-white text-right" style="font-size: 20px;">
                                     Memasukkan Data Pembelian Barang
                                 </h2>
-                                <p class="mt-4 text-sm font-medium text-gray-500 text-pretty">
-                                    The CC BY 3.0 License does not include a "Share Alike" (SA)
-                                    provision. Unlike some other Creative Commons licenses, it does
-                                    not require you to license any derivative works under the same
-                                    terms. You can create adaptations or derivatives and license
-                                    them differently if you choose.
+                                <p class="mt-4 text-sm font-medium text-white text-pretty text-right" style="text-align:justify; direction: rtl;">
+                                    Memasukkan Data Pembelian Barang memungkinkan Admin untuk dengan mudah
+                                    merekam dan mengelola pembelian barang dalam sistem. Admin dapat memasukkan rincian transaksi, seperti tanggal pembelian, 
+                                    nama produk, jumlah, harga dan informasi vendor.
                                 </p>
                             </div>
                         </div>
@@ -148,7 +145,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                <h2 class="mt-20 text-xl font-semibold tracking-tighter text-indigo-900 lg:text-4xl text-balance">
+                <h2 class="mt-20 text-xl font-bold tracking-tighter text-indigo-900 lg:text-4xl text-balance" style="margin-bottom:35px;">
                     Fitur Lainnya
                 </h2>
                 <div class="grid gap-2 mt-2 text-center md:grid-cols-3">
@@ -157,10 +154,10 @@
                             <img src="../images/placeholders/rectangle1.svg" alt="#_" class="w-full h-full mx-auto rounded-2xl">
                         </div>
                         <div class="mt-4">
-                            <p class="font-medium text-gray-900">Laporan Rekap Pembelian Barang</p>
+                            <p class="font-bold text-gray-900" style="font-size: 16px;">Laporan Rekap Pembelian Barang</p>
                             <p class="mt-2 text-sm text-gray-500">
-                                The license comes with no warranties. The licensor provides the
-                                work "as is," and users must use it at their own risk.
+                                Laporan Rekap Pembelian Barang memungkinkan pengguna untuk melacak
+                                dan menganalisis semua transaksi pembelian dengan mudah.
                             </p>
                         </div>
                     </div>
@@ -169,9 +166,10 @@
                             <img src="../images/placeholders/rectangle1.svg" alt="#_" class="w-full h-full mx-auto rounded-2xl">
                         </div>
                         <div class="px-8 mt-4">
-                            <p class="font-medium text-gray-900">Mencatat Tranksaksi Penjualan</p>
+                            <p class="font-bold text-gray-900" style="font-size: 16px;">Mencatat Tranksaksi Penjualan</p>
                             <p class="mt-2 text-sm text-gray-500">
-                                You can adapt, remix, transform, and build upon the licensed work.
+                                Mencatat Transaksi Penjualan memungkinkan pengguna untuk Mencatat
+                                setiap transaksi penjualan dengan akurat.
                             </p>
                         </div>
                     </div>
@@ -180,10 +178,10 @@
                             <img src="../images/placeholders/rectangle1.svg" alt="#_" class="w-full h-full mx-auto rounded-2xl">
                         </div>
                         <div class="px-8 mt-4">
-                            <p class="font-medium text-gray-900">Rekap History Penjualan</p>
+                            <p class="font-bold text-gray-900" style="font-size: 16px;">Rekap Riwayat Penjualan</p>
                             <p class="mt-2 text-sm text-gray-500">
-                                You are allowed to use the licensed work for both non-commercial
-                                and commercial purposes.
+                                Rekap Riwayat Penjualan memberikan akses cepat dan mudah untuk melihat 
+                                riwayat semua transaksi penjualan yang dilakukan.
                             </p>
                         </div>
                     </div>

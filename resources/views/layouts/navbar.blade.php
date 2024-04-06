@@ -1,4 +1,4 @@
-<nav>
+<nav style="position:fixed; top:0; width:100%; background-color:#ffffff; z-index:999;">
     <div class="justify-center w-full mx-auto">
         <div class="flex flex-col w-full px-8 py-4 mx-auto md:px-12 md:items-center md:justify-between md:flex-row lg:px-32 max-w-7xl">
             <div class="flex flex-row items-center justify-between text-black">
@@ -7,7 +7,7 @@
                 </a>
             </div>
             <div class="flex-col items-center text-xs gap-14 text-sm font-semibold text-indigo-800 md:flex md:flex-row lg:p-0 md:mt-0">
-                <a class="hover:text-blue-600 focus:outline-none focus:text-gray-500 md:ml-auto" href="#_" style="font-size: 14px;">Beranda</a>
+                <a class="hover:text-blue-600 focus:outline-none focus:text-gray-500 md:ml-auto" href="/" style="font-size: 14px;">Beranda</a>
                 <a class="hover:text-blue-600 focus:outline-none focus:text-gray-500 md:ml-auto" href="#_" style="font-size: 14px;">Profile</a>
                 <a class="hover:text-blue-600 focus:outline-none focus:text-gray-500 md:ml-auto" href="#_" style="font-size: 14px;">Info Berita</a>
                 <a class="hover:text-blue-600 focus:outline-none focus:text-gray-500 md:ml-auto" href="#_" style="font-size: 14px;">Produk</a>
