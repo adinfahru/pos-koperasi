@@ -1,11 +1,10 @@
 <aside class="z-20 hidden w-64 overflow-y-auto bg-white md:block flex-shrink-0 border">
-    <div class="py-4 text-gray-500">
-        <a class="ml-6 text-lg font-bold text-gray-800" href="{{ route('dashboard') }}">
+    <div class="py-4 text-indigo-900">
+        <a class="ml-6 text-lg font-bold" href="{{ route('dashboard') }}">
             Koperasi Jaya
 
         </a>
 
-        
         <ul class="mt-6">
             @can('admin')
             <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('admin.index') ? 'bg-blue-100 rounded-md' : '' }}">
@@ -22,9 +21,9 @@
             <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('products.index') ? 'bg-blue-100 rounded-md' : '' }}">
                 <x-nav-link href="{{ route('products.index') }}" :active="request()->routeIs('products.index')">
                     <x-slot name="icon">
-                        <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                            <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
-                        </svg>
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0"/>
+                    </svg>
                     </x-slot>
                     {{ __('Products') }}
                 </x-nav-link>
@@ -44,9 +43,9 @@
             <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('#') ? 'bg-blue-100 rounded-md' : '' }}">
                 <x-nav-link href="#" :active="request()->routeIs('#')">
                     <x-slot name="icon">
-                        <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
-                        </svg>
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
                     </x-slot>
                     {{ __('POS') }}
                 </x-nav-link>

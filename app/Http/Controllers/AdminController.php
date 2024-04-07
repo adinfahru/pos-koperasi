@@ -15,4 +15,6 @@ class AdminController extends Controller
         return view('admin.index', ['products' => $products, 'users' => $users]);
         
     }
+
+     
 }
