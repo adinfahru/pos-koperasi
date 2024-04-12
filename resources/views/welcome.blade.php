@@ -8,21 +8,21 @@
     <title>Pos Koperasi Jaya</title>
 </head>
 
-<body class="antialiased;">
-    @include('layouts.navbar')
+@include('layouts.navbar')
+<body class="antialiased;" style="background-image: url('images/bg-only-blue.png');">
     <section>
         <div class="px-8 py-16 mx-auto md:px-12 lg:px-32 max-w-7xl" style="margin-top:70px;">
             <div>
-                <h1 class="text-xl font-bold tracking-tighter text-indigo-900 lg:text-6xl text-balance">
+                <h1 class="text-xl font-bold tracking-tighter lg:text-6xl text-balance" style="color: #3E379B;">
                     Ekonomi Sejahtera,
-                    <span class="text-indigo-800">Bersama Koperasi Jaya</span>
+                    <span class="text-white" style="color: #3E379B;">Bersama Koperasi Jaya</span>
                 </h1>
             </div>
             <div class="space-y-2">
-                <div class="grid gap-4 mt-10 mb-28 lg:grid-flow-col-dense lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-1">
+                <div class="grid gap-4 mt-10 mb-28 lg:grid-flow-col-dense lg:mx-auto lg:grid lg:grid-cols-1">
                     <div class="max-w-lg min-w-full mx-auto">
                         <div class="flex h-full">
-                            <div class="flex flex-col justify-center p-8 border rounded-3xl max-w-none" style="background: #4338ca;">
+                            <div class="flex flex-col justify-center p-8 border rounded-3xl max-w-none" style="background: #3E379B;">
                                 <h2 class="font-medium text-white font-semibold text-justify">
                                     Koperasi Jaya didirikan pada tanggal 8 Maret 2024 oleh mahasiswa Universitas Telkom dari program studi S1 Sistem Informasi, yaitu Aria Riezki Fhadila, Josia Fortino Pakpahan, Kevin Fritz Angelo, Mohammad Fahrudin, M Hasbi Asshiddiqqi, M. Rayhan Maulana Al-Rasyid, dan R. Rama Ahmad Waliyya.
                                     Koperasi ini disahkan dengan Akte Badan Hukum No.9999 pada tanggal 10 Maret 2024 sebagai Koperasi Serba Usaha. Anggota dari Koperasi Jaya adalah karyawan tetap yang terdaftar pada BUMD.
@@ -36,52 +36,47 @@
                     <div class="lg:col-span-2">
                         <div>
                             <div class="relative h-full p-0 overflow-hidden border-rounded">
-                                <img src="{{ asset('images/Koperasi-Logo.png') }}" class="object-cover border shadow-2xl rounded-2xl" width="300" height="200">
+                                <img src="{{ asset('images/fotofounder.jpg') }}" class="object-cover border shadow-2xl rounded-2xl" width="300" height="200">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="justify-center">
-                    <div class="flex flex-col px-8 py-6" style="background: linear-gradient(to right, #4338ca, #5a67d8); width:800%; margin-left: -350%;">
+                    <div class="flex flex-col px-8 py-6" style="background: linear-gradient(to right, #3E379B, #5a67d8); width: 100vw; margin-left: -200px;">
                         <div>
-                            <div class="px-8 py-2 mx-auto md:px-12 lg:px-4 max-w-7xl">
+                            <div class="px-8 py-2 mx-auto max-w-7xl md:px-12 lg:px-4">
                                 <div class="grid grid-cols-2 text-sm font-medium text-center text-gray-500 gap-x-6 gap-y-12 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16 text-balance">
                                     <div>
                                         <div>
-                                            <span class="flex items-center justify-center mx-auto bg-gray-100 rounded-full size-12"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="text-gray-600 size-6">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5"></path>
-                                                </svg></span>
+                                            <span class="flex items-center justify-center mx-auto size-12"><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="white" class="bi bi-person-fill" viewBox="0 0 16 16"> <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/> </svg>
+                                            </span>
                                         </div>
                                         <div class="mt-6 text-white">
-                                            <h3 class="text-xl font-semibold">1200+ Anggota</h3>
-                                            <p class="mt-2 text-xs">
+                                            <h3 class="text-xl font-bold">1200+ Anggota</h3>
+                                            <p class="mt-2 text-xs" style="font-style: regular;">
                                                 Total Anggota Koperasi Jaya
                                             </p>
                                         </div>
                                     </div>
                                     <div>
                                         <div>
-                                            <span class="flex items-center justify-center mx-auto bg-gray-100 rounded-full size-12"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="text-gray-600 size-6">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"></path>
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"></path>
-                                                </svg></span>
+                                            <span class="flex items-center justify-center mx-auto size-12"><svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 64C28.7 64 0 92.7 0 128V384c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64zm64 320H64V320c35.3 0 64 28.7 64 64zM64 192V128h64c0 35.3-28.7 64-64 64zM448 384c0-35.3 28.7-64 64-64v64H448zm64-192c-35.3 0-64-28.7-64-64h64v64zM288 160a96 96 0 1 1 0 192 96 96 0 1 1 0-192z" fill="white"></path></svg></span>
                                         </div>
                                         <div class="mt-6 text-white">
-                                            <h3 class="text-xl font-semibold">1 Miliar+ Rupiah</h3>
-                                            <p class="mt-2 text-xs">
+                                            <h3 class="text-xl font-bold">1 Miliar+ Rupiah</h3>
+                                            <p class="mt-2 text-xs" style="font-style: regular;">
                                                 Total Asset
                                             </p>
                                         </div>
                                     </div>
                                     <div>
                                         <div>
-                                            <span class="flex items-center justify-center mx-auto bg-gray-100 rounded-full size-12"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="text-gray-600 size-6">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"></path>
-                                                </svg></span>
+                                            <span class="flex items-center justify-center mx-auto size-12"><svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" fill="white"></path> <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" fill="white"></path> </svg>
+                                            </span>
                                         </div>
                                         <div class="mt-6 text-white">
-                                            <h3 class="text-xl font-semibold">24 dari 38 Provinsi</h3>
-                                            <p class="mt-2 text-xs">
+                                            <h3 class="text-xl font-bold">24 dari 38 Provinsi</h3>
+                                            <p class="mt-2 text-xs" style="font-style: regular;">
                                                 Total Sebaran Koperasi
                                             </p>
                                         </div>
@@ -103,7 +98,7 @@
                 <div class="grid gap-2 lg:grid-flow-col-dense lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-3">
                     <div class="max-w-lg min-w-full mx-auto lg:col-start-3">
                         <div class="flex h-full">
-                            <div class="flex flex-col justify-center p-8 border  rounded-3xl max-w-none" style="background: #4338ca;">
+                            <div class="flex flex-col justify-center p-8 border  rounded-3xl max-w-none" style="background: #3E379B;">
                                 <h2 class="font-bold text-white" style="font-size: 20px;">Dashboard Pembelian dan Penjualan</h2>
                                 <p class="mt-4 text-sm font-medium text-white text-pretty" style="text-align:justify;">
                                     Dashboard Pembelian dan Penjualan menyediakan akses cepat ke informasi terkini
@@ -124,7 +119,7 @@
                 <div class="grid gap-2 lg:grid-flow-col-dense lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-3">
                     <div class="max-w-lg min-w-full mx-auto">
                         <div class="flex h-full">
-                            <div class="flex flex-col justify-center p-8 border rounded-3xl max-w-none" style="background: #4338ca;">
+                            <div class="flex flex-col justify-center p-8 border rounded-3xl max-w-none" style="background: #3E379B;">
                                 <h2 class="font-bold text-white text-right" style="font-size: 20px;">
                                     Memasukkan Data Pembelian Barang
                                 </h2>
