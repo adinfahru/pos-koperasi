@@ -3,7 +3,7 @@
         {{ __('Welcome!, Admin Dashboard') }}
     </x-slot>
 
-    <div class="mt-5 bg-white rounded-lg shadow-xs">
+    <div class="mt-5  rounded-lg shadow-xs">
         <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
             <!-- Card -->
             <div class="flex items-center p-4 bg-white rounded-lg shadow-xs border">

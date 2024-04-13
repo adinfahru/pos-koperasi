@@ -22,7 +22,7 @@
     <!-- Mobile sidebar -->
     <!-- Backdrop -->
     @include('layouts.navigation-mobile')
-    <div class="flex flex-col flex-1 w-full">
+    <div class="flex flex-col flex-1 w-full bg-gray-200">
         @include('layouts.top-menu')
         <main class="h-full overflow-y-auto">
             <div class="container px-6 mx-auto grid">
@@ -31,7 +31,6 @@
                         {{ $header }}
                     </h2>
                 @endif
-
                 {{ $slot }}
             </div>
         </main>
