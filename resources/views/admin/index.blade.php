@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        {{ __('Welcome!, Admin Dashboard') }}
+        {{ __('Admin Dashboard') }}
     </x-slot>
 
     <div class="mt-5  rounded-lg shadow-xs">

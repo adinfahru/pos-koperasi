@@ -7,53 +7,14 @@
     @vite('resources/css/app.css')
     <title>Pos Koperasi</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
 </head>
-<body class="antialiased">
-    <nav>
-        <div class="justify-center w-full mx-auto">
-            <div class="flex flex-col w-full px-8 py-2 mx-auto md:px-12 md:items-center md:justify-between md:flex-row lg:px-32 max-w-7xl">
-                <div class="flex flex-row items-center justify-between text-black">
-                    <a class="inline-flex items-center gap-3 text-xl font-bold tracking-tight text-indigo-800" href="/">
-                        <span>Koperasi Jaya</span>
-                    </a>
-                </div>
-                <div class="flex-col items-center gap-16 text-sm font-medium text-indigo-800 md:flex md:flex-row lg:p-0 md:mt-0">
-                    <a class="hover:text-black focus:outline-none focus:text-gray-500 md:ml-auto" href="#_">Beranda</a>
-                    <a class="hover:text-black focus:outline-none focus:text-gray-500 md:ml-auto" href="#_">Profile</a>
-                    <a class="hover:text-black focus:outline-none focus:text-gray-500 md:ml-auto" href="#_">Info Berita</a>
-                    <a class="hover:text-black focus:outline-none focus:text-gray-500 md:ml-auto" href="#_">Produk</a>
-                    <a class="hover:text-black focus:outline-none focus:text-gray-500 md:ml-auto" href="#_">Bantuan</a>
-                    <a href="{{route('login')}}">
-                        <button type="button" class="rounded-md bg-indigo-800 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                            Masuk
-                        </button>
-                    </a>
-                    <a href="{{route('register')}}">
-                        <button type="button" class="rounded-md bg-indigo-800 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                            Register
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="justify-center w-full mx-auto bg-indigo-800">
-            <div class="flex flex-col w-full px-8 py-2.5 mx-auto md:px-12 md:items-center md:justify-between md:flex-row lg:px-32 max-w-7xl">
-            <p class="text-xs text-white">
-                    Jl. Telekomunikasi No. 5, Terusan Buah Batu, Bandung, 40257
-                </p>
-            </div>
-        </div>
-    </nav>
 
+<body class="antialiased">
+    @include('layouts.navbar')
     <section>
         <div class="px-8 py-16 mx-auto md:px-12 lg:px-32 max-w-7xl">
             <div>
-                <h1 class="text-xl font-semibold tracking-tighter text-indigo-900 lg:text-6xl text-balance">
+                <h1 class="text-xl font-bold tracking-tighter text-indigo-900 lg:text-6xl text-balance">
                     Ekonomi Sejahtera
                     <span class="text-indigo-800">Bersama Koperasi Jaya</span>
                 </h1>
@@ -69,14 +30,14 @@
                         <div class="flex h-full">
                             <div class="flex flex-col justify-center p-8 border bg-indigo-50 rounded-3xl max-w-none">
                                 <h2 class="font-medium text-gray-900">
-                                Welcome to Koperasi Jaya, your gateway to economic prosperity and community empowerment. 
-                                Our platform stands as a beacon of hope, championing the ideals of shared prosperity and collaborative growth. 
-                                With the tagline "Ekonomi Sejahtera Bersama Koperasi Jaya," we are committed to fostering economic well-being and 
-                                ensuring a prosperous future for all.
+                                    Welcome to Koperasi Jaya, your gateway to economic prosperity and community empowerment.
+                                    Our platform stands as a beacon of hope, championing the ideals of shared prosperity and collaborative growth.
+                                    With the tagline "Ekonomi Sejahtera Bersama Koperasi Jaya," we are committed to fostering economic well-being and
+                                    ensuring a prosperous future for all.
                                 </h2>
                                 <p class="mt-4 text-sm font-medium text-gray-500 text-pretty">
-                                Join us in our mission to build a brighter tomorrow, where economic prosperity is not just a dream but a reality for all. 
-                                Together, let's create a future of shared success and prosperity. Ekonomi Sejahtera Bersama Koperasi Jaya!
+                                    Join us in our mission to build a brighter tomorrow, where economic prosperity is not just a dream but a reality for all.
+                                    Together, let's create a future of shared success and prosperity. Ekonomi Sejahtera Bersama Koperasi Jaya!
                                 </p>
                             </div>
                         </div>
@@ -84,7 +45,7 @@
                     <div class="lg:col-span-2">
                         <div>
                             <div class="relative h-full p-2 overflow-hidden border rounded-3xl">
-                                <img src="{{ asset('images/koperasi.png') }}" class="object-cover border shadow-2xl rounded-2xl" width="300" height="200">
+                                <img src="{{ asset('images/Koperasi-Logo.png') }}" class="object-cover border shadow-2xl rounded-2xl" width="300" height="200">
                             </div>
                         </div>
                     </div>
@@ -138,14 +99,22 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
+                <div class="text-center">
+                <h1 class=" mt-6 text-xl font-semibold tracking-tighter text-indigo-900 lg:text-6xl text-balance">
+                    SEMUA KEBUTUHAN ANDA ADA DI
+                    <span class="text-indigo-800">KOPERASIJAYA</span>
+                </h1>
+                <p class="mt-4 text-base font-medium text-indigo-800 text-balance">
+                    KOPERASIJAYA menyediakan segala kebutuhan anda terkait koperasi serba usaha. Mari kita lihat apa saja yang bisa dilakukan.
+                </p> <br>
+            </div>
                 <div class="grid gap-2 lg:grid-flow-col-dense lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-3">
                     <div class="max-w-lg min-w-full mx-auto lg:col-start-3">
                         <div class="flex h-full">
                             <div class="flex flex-col justify-center p-8 border bg-indigo-50  rounded-3xl max-w-none">
-                                <h2 class="font-medium text-gray-900">Rule of Attribution</h2>
+                                <h2 class="font-medium text-gray-900">Dashboard Pembelian dan Penjualan</h2>
                                 <p class="mt-4 text-sm font-medium text-gray-500 text-pretty">
                                     You must give appropriate credit to the original creator of the
                                     work. This typically includes providing the name of the author
@@ -168,7 +137,7 @@
                         <div class="flex h-full">
                             <div class="flex flex-col justify-center p-8 border bg-indigo-50  rounded-3xl max-w-none">
                                 <h2 class="font-medium text-gray-900">
-                                    Share alike (SA) absence
+                                    Memasukkan Data Pembelian Barang
                                 </h2>
                                 <p class="mt-4 text-sm font-medium text-gray-500 text-pretty">
                                     The CC BY 3.0 License does not include a "Share Alike" (SA)
@@ -188,13 +157,17 @@
                         </div>
                     </div>
                 </div>
+                <div class="text-center">
+                <h2 class="mt-20 text-xl font-semibold tracking-tighter text-indigo-900 lg:text-4xl text-balance">
+                    Fitur Lainnya
+                </h2>
                 <div class="grid gap-2 mt-2 text-center md:grid-cols-3">
                     <div>
                         <div class="p-2 overflow-hidden border rounded-3xl">
                             <img src="../images/placeholders/rectangle1.svg" alt="#_" class="w-full h-full mx-auto rounded-2xl">
                         </div>
                         <div class="mt-4">
-                            <p class="font-medium text-gray-900">No warranty disclaimer</p>
+                            <p class="font-medium text-gray-900">Laporan Rekap Pembelian Barang</p>
                             <p class="mt-2 text-sm text-gray-500">
                                 The license comes with no warranties. The licensor provides the
                                 work "as is," and users must use it at their own risk.
@@ -206,7 +179,7 @@
                             <img src="../images/placeholders/rectangle1.svg" alt="#_" class="w-full h-full mx-auto rounded-2xl">
                         </div>
                         <div class="px-8 mt-4">
-                            <p class="font-medium text-gray-900">Modification Freedom</p>
+                            <p class="font-medium text-gray-900">Mencatat Tranksaksi Penjualan</p>
                             <p class="mt-2 text-sm text-gray-500">
                                 You can adapt, remix, transform, and build upon the licensed work.
                             </p>
@@ -217,7 +190,7 @@
                             <img src="../images/placeholders/rectangle1.svg" alt="#_" class="w-full h-full mx-auto rounded-2xl">
                         </div>
                         <div class="px-8 mt-4">
-                            <p class="font-medium text-gray-900">Commercial use allowed</p>
+                            <p class="font-medium text-gray-900">Rekap History Penjualan</p>
                             <p class="mt-2 text-sm text-gray-500">
                                 You are allowed to use the licensed work for both non-commercial
                                 and commercial purposes.
@@ -228,7 +201,46 @@
             </div>
         </div>
     </section>
-
+<footer class="px-8 bg-indigo-800 py-12 mx-auto md:px-12 lg:px-32 max-w-auto">
+    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+        <div class="text-white">
+            <p class="text-xl font-semibold font-bold uppercase">KOPERASIJAYA</p>
+            <p class="mt-2 text-sm text-white font-medium text-gray-500 lg:w-4/5">
+                Alamat: Jl. Telekomunikasi No. 5, Terusan Buah Batu, Bandung 40275
+                <span class="lg:block"> Email: support@koperasijaya.co.id</span>
+                <span class="lg:block"> Telp: (+62) 11 397 243 2 </span>
+            </p>
+        </div>
+        <div class="flex justify-center xl:col-span-2">
+            <div class="text-white">
+                <h3 class="text-xl font-semibold font-bold uppercase">Socials</h3>
+                <ul role="list" class="mt-2 space-y-2">
+                    <li>
+                        <a href="#_" class="hover:text-gray-500 font-medium lg:w-4/5">
+                            Youtube
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#_" class="hover:text-gray-500 font-medium lg:w-4/5">
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#_" class="hover:text-gray-500 font-medium lg:w-4/5">
+                            Facebook
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col pt-12 md:flex-row md:items-center md:justify-between">
+        <span class="text-sm text-white font-medium text-gray-500">
+            Copyright © <span x-text="year">2024</span>
+            <a aria-label="Michael Andreuzza" href="#_" class="text-blue-500 hover:text-gray-500">KOPERASIJAYA</a>
+            Since 2024
+        </span>
+    </div>
+</footer>
 </body>
-
 </html>
