@@ -111,7 +111,7 @@
                     <div class="lg:col-start-1 lg:col-span-2">
                         <div>
                             <div class="relative h-full p-2 overflow-hidden border rounded-3xl">
-                                <img src="../images/placeholders/rectangle1.svg" class="object-cover h-full border shadow-2xl rounded-2xl">
+                                <img src="{{ asset('images/dashboard-pembelian-barang.png') }}" class="object-cover h-full border shadow-2xl rounded-2xl">
                             </div>
                         </div>
                     </div>
@@ -121,12 +121,12 @@
                         <div class="flex h-full">
                             <div class="flex flex-col justify-center p-8 border rounded-3xl max-w-none" style="background: #3E379B;">
                                 <h2 class="font-bold text-white text-right" style="font-size: 20px;">
-                                    Memasukkan Data Pembelian Barang
+                                    Memasukkan Data Barang
                                 </h2>
                                 <p class="mt-4 text-sm font-medium text-white text-pretty text-right" style="text-align:justify; direction: rtl;">
-                                    Memasukkan Data Pembelian Barang memungkinkan Admin untuk dengan mudah
-                                    merekam dan mengelola pembelian barang dalam sistem. Admin dapat memasukkan rincian transaksi, seperti tanggal pembelian, 
-                                    nama produk, jumlah, harga dan informasi vendor.
+                                    Memasukkan Data Barang memungkinkan Admin untuk dengan mudah
+                                    memasukkan data barang baru ke dalam sistem. Admin dapat memasukkan rincian barang, seperti nama produk, kategori,
+                                    stok, harga jual/beli, dan foto produk.
                                 </p>
                             </div>
                         </div>
@@ -134,7 +134,7 @@
                     <div class="lg:col-span-2">
                         <div>
                             <div class="relative h-full p-2 overflow-hidden border rounded-3xl">
-                                <img src="../images/placeholders/rectangle1.svg" class="object-cover h-full border shadow-2xl rounded-2xl">
+                                <img src="{{asset('images/input-data-barang.png')}}" class="object-cover h-full border shadow-2xl rounded-2xl">
                             </div>
                         </div>
                     </div>
@@ -146,22 +146,22 @@
                 <div class="grid gap-2 mt-2 text-center md:grid-cols-3">
                     <div>
                         <div class="p-2 overflow-hidden border rounded-3xl">
-                            <img src="../images/placeholders/rectangle1.svg" alt="#_" class="w-full h-full mx-auto rounded-2xl">
+                            <img src="{{asset('images/manajemen-anggota.png')}}" alt="#_" class="w-full h-full mx-auto rounded-2xl">
                         </div>
                         <div class="mt-4">
-                            <p class="font-bold text-gray-900" style="font-size: 16px;">Laporan Rekap Pembelian Barang</p>
+                            <p class="font-bold text-indigo-900" style="font-size: 16px;">Manajemen Anggota</p>
                             <p class="mt-2 text-sm text-gray-500">
-                                Laporan Rekap Pembelian Barang memungkinkan pengguna untuk melacak
-                                dan menganalisis semua transaksi pembelian dengan mudah.
+                                Manajemen Anggota memungkinkan Admin untuk melakukan
+                                penambahan anggota baru disertai dengan role-nya.
                             </p>
                         </div>
                     </div>
                     <div>
                         <div class="p-2 overflow-hidden border rounded-3xl">
-                            <img src="../images/placeholders/rectangle1.svg" alt="#_" class="w-full h-full mx-auto rounded-2xl">
+                            <img src="{{asset('images/Koperasi-Logo-169.png')}}" alt="#_" class="w-full h-full mx-auto rounded-2xl">
                         </div>
                         <div class="px-8 mt-4">
-                            <p class="font-bold text-gray-900" style="font-size: 16px;">Mencatat Tranksaksi Penjualan</p>
+                            <p class="font-bold text-indigo-900" style="font-size: 16px;">Mencatat Tranksaksi Penjualan</p>
                             <p class="mt-2 text-sm text-gray-500">
                                 Mencatat Transaksi Penjualan memungkinkan pengguna untuk Mencatat
                                 setiap transaksi penjualan dengan akurat.
@@ -170,13 +170,13 @@
                     </div>
                     <div>
                         <div class="p-2 overflow-hidden border rounded-3xl">
-                            <img src="../images/placeholders/rectangle1.svg" alt="#_" class="w-full h-full mx-auto rounded-2xl">
+                            <img src="{{asset('images/Koperasi-Logo-169.png')}}" alt="#_" class="w-full h-full mx-auto rounded-2xl">
                         </div>
                         <div class="px-8 mt-4">
-                            <p class="font-bold text-gray-900" style="font-size: 16px;">Rekap Riwayat Penjualan</p>
+                            <p class="font-bold text-indigo-900" style="font-size: 16px;">History Pembelian</p>
                             <p class="mt-2 text-sm text-gray-500">
-                                Rekap Riwayat Penjualan memberikan akses cepat dan mudah untuk melihat 
-                                riwayat semua transaksi penjualan yang dilakukan.
+                                History Pembelian memungkinkan Anggota untuk melihat 
+                                riwayat semua transaksi pembelian yang sudah dilakukan.
                             </p>
                         </div>
                     </div>
