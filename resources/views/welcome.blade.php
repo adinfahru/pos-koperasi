@@ -45,7 +45,7 @@
                     <div class="lg:col-span-2">
                         <div>
                             <div class="relative h-full p-2 overflow-hidden border rounded-3xl">
-                                <img src="{{ asset('images/koperasi.png') }}" class="object-cover border shadow-2xl rounded-2xl" width="300" height="200">
+                                <img src="{{ asset('images/Koperasi-Logo.png') }}" class="object-cover border shadow-2xl rounded-2xl" width="300" height="200">
                             </div>
                         </div>
                     </div>
@@ -99,14 +99,22 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
+                <div class="text-center">
+                <h1 class=" mt-6 text-xl font-semibold tracking-tighter text-indigo-900 lg:text-6xl text-balance">
+                    SEMUA KEBUTUHAN ANDA ADA DI
+                    <span class="text-indigo-800">KOPERASIJAYA</span>
+                </h1>
+                <p class="mt-4 text-base font-medium text-indigo-800 text-balance">
+                    KOPERASIJAYA menyediakan segala kebutuhan anda terkait koperasi serba usaha. Mari kita lihat apa saja yang bisa dilakukan.
+                </p> <br>
+            </div>
                 <div class="grid gap-2 lg:grid-flow-col-dense lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-3">
                     <div class="max-w-lg min-w-full mx-auto lg:col-start-3">
                         <div class="flex h-full">
                             <div class="flex flex-col justify-center p-8 border bg-indigo-50  rounded-3xl max-w-none">
-                                <h2 class="font-medium text-gray-900">Rule of Attribution</h2>
+                                <h2 class="font-medium text-gray-900">Dashboard Pembelian dan Penjualan</h2>
                                 <p class="mt-4 text-sm font-medium text-gray-500 text-pretty">
                                     You must give appropriate credit to the original creator of the
                                     work. This typically includes providing the name of the author
@@ -129,7 +137,7 @@
                         <div class="flex h-full">
                             <div class="flex flex-col justify-center p-8 border bg-indigo-50  rounded-3xl max-w-none">
                                 <h2 class="font-medium text-gray-900">
-                                    Share alike (SA) absence
+                                    Memasukkan Data Pembelian Barang
                                 </h2>
                                 <p class="mt-4 text-sm font-medium text-gray-500 text-pretty">
                                     The CC BY 3.0 License does not include a "Share Alike" (SA)
@@ -149,13 +157,17 @@
                         </div>
                     </div>
                 </div>
+                <div class="text-center">
+                <h2 class="mt-20 text-xl font-semibold tracking-tighter text-indigo-900 lg:text-4xl text-balance">
+                    Fitur Lainnya
+                </h2>
                 <div class="grid gap-2 mt-2 text-center md:grid-cols-3">
                     <div>
                         <div class="p-2 overflow-hidden border rounded-3xl">
                             <img src="../images/placeholders/rectangle1.svg" alt="#_" class="w-full h-full mx-auto rounded-2xl">
                         </div>
                         <div class="mt-4">
-                            <p class="font-medium text-gray-900">No warranty disclaimer</p>
+                            <p class="font-medium text-gray-900">Laporan Rekap Pembelian Barang</p>
                             <p class="mt-2 text-sm text-gray-500">
                                 The license comes with no warranties. The licensor provides the
                                 work "as is," and users must use it at their own risk.
@@ -167,7 +179,7 @@
                             <img src="../images/placeholders/rectangle1.svg" alt="#_" class="w-full h-full mx-auto rounded-2xl">
                         </div>
                         <div class="px-8 mt-4">
-                            <p class="font-medium text-gray-900">Modification Freedom</p>
+                            <p class="font-medium text-gray-900">Mencatat Tranksaksi Penjualan</p>
                             <p class="mt-2 text-sm text-gray-500">
                                 You can adapt, remix, transform, and build upon the licensed work.
                             </p>
@@ -178,7 +190,7 @@
                             <img src="../images/placeholders/rectangle1.svg" alt="#_" class="w-full h-full mx-auto rounded-2xl">
                         </div>
                         <div class="px-8 mt-4">
-                            <p class="font-medium text-gray-900">Commercial use allowed</p>
+                            <p class="font-medium text-gray-900">Rekap History Penjualan</p>
                             <p class="mt-2 text-sm text-gray-500">
                                 You are allowed to use the licensed work for both non-commercial
                                 and commercial purposes.
@@ -189,8 +201,46 @@
             </div>
         </div>
     </section>
-    <footer>
-
-    </footer>
+<footer class="px-8 bg-indigo-800 py-12 mx-auto md:px-12 lg:px-32 max-w-auto">
+    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+        <div class="text-white">
+            <p class="text-xl font-semibold font-bold uppercase">KOPERASIJAYA</p>
+            <p class="mt-2 text-sm text-white font-medium text-gray-500 lg:w-4/5">
+                Alamat: Jl. Telekomunikasi No. 5, Terusan Buah Batu, Bandung 40275
+                <span class="lg:block"> Email: support@koperasijaya.co.id</span>
+                <span class="lg:block"> Telp: (+62) 11 397 243 2 </span>
+            </p>
+        </div>
+        <div class="flex justify-center xl:col-span-2">
+            <div class="text-white">
+                <h3 class="text-xl font-semibold font-bold uppercase">Socials</h3>
+                <ul role="list" class="mt-2 space-y-2">
+                    <li>
+                        <a href="#_" class="hover:text-gray-500 font-medium lg:w-4/5">
+                            Youtube
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#_" class="hover:text-gray-500 font-medium lg:w-4/5">
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#_" class="hover:text-gray-500 font-medium lg:w-4/5">
+                            Facebook
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col pt-12 md:flex-row md:items-center md:justify-between">
+        <span class="text-sm text-white font-medium text-gray-500">
+            Copyright © <span x-text="year">2024</span>
+            <a aria-label="Michael Andreuzza" href="#_" class="text-blue-500 hover:text-gray-500">KOPERASIJAYA</a>
+            Since 2024
+        </span>
+    </div>
+</footer>
 </body>
 </html>

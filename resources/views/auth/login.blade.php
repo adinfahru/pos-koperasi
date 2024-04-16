@@ -1,15 +1,14 @@
 @include('layouts.navbar')
 <x-guest-layout>
-    <div class="flex flex-col overflow-y-auto md:flex-row sm:flex-col">
-        <div class="md:h-auto md:w-1/2 shadow-2xl rounded-xl sm:shadow-md">
-            <img aria-hidden="true" class="object-cover w-full h-full rounded-lg"
-                src="{{ asset('images/Koperasi-Logo.png') }}" alt="Office" />
-                
+    <div class="flex flex-col overflow-y-auto md:flex-row sm:flex-col sm:gap-10">
+        <div class="md:h-auto md:w-1/2 shadow-2xl rounded-xl sm:shadow-md flex items-center justify-center h-screen">
+            <img class="w-100 h-100 object-cover" src="{{ asset('images/Koperasi--Logo.png') }}" alt="Office" />     
         </div>
+        
         <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
             <div class="w-full">
                 <h1 class="mb-4 text-xl font-semibold text-gray-700">
-                    Login
+                    Log in
                 </h1>
 
                 <form method="POST" action="{{ route('login') }}">
