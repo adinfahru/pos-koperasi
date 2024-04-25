@@ -22,6 +22,18 @@ return new class extends Migration
             $table->timestamps();
         });
     }
+    
+    // public function up()
+    // {
+    //     Schema::create('transactions', function (Blueprint $table) {
+    //         $table->id();
+    //         $table->foreignId('product_id')->constrained()->onDelete('cascade');
+    //         $table->string('type');
+    //         $table->integer('quantity');
+    //         $table->decimal('amount', 15, 2);
+    //         $table->timestamps();
+    //     });
+    // }
 
     /**
      * Reverse the migrations.
