@@ -17,18 +17,18 @@
                     {{ __('Dashboard') }}
                 </x-nav-link>
             </li>
-            
+
             <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('products.index') ? 'bg-blue-100 rounded-md' : '' }}">
                 <x-nav-link href="{{ route('products.index') }}" :active="request()->routeIs('products.index')">
                     <x-slot name="icon">
-                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0"/>
-                    </svg>
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0" />
+                        </svg>
                     </x-slot>
                     {{ __('Products') }}
                 </x-nav-link>
             </li>
-            
+
             <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('users.index') ? 'bg-blue-100 rounded-md' : '' }}">
                 <x-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
                     <x-slot name="icon">
@@ -40,12 +40,14 @@
                 </x-nav-link>
             </li>
 
-            <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('#') ? 'bg-blue-100 rounded-md' : '' }}">
-                <x-nav-link href="#" :active="request()->routeIs('#')">
+            <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('pos.index') ? 'bg-blue-100 rounded-md' : '' }}">
+                <x-nav-link href="{{ route('pos.index') }}" :active="request()->routeIs('pos.index')">
                     <x-slot name="icon">
-                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line>
-                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                    </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="10" cy="20.5" r="1" />
+                            <circle cx="18" cy="20.5" r="1" />
+                            <path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1" />
+                        </svg>
                     </x-slot>
                     {{ __('POS') }}
                 </x-nav-link>
