@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PosController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\TransactionDetailController;
+use App\Http\Controllers\PenjualanDetailController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,24 +18,26 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
     Route::view('about', 'about')->name('about');
 
     Route::get('users', [UserController::class, 'index'])->name('users.index')->middleware(['auth']);;
+    Route::resource('users', UserController::class)->middleware(['auth']);;;
 
     Route::get('admin', [AdminController::class, 'index'])->name('admin.index')->middleware(['auth']);;;
 
     Route::resource('products', ProductsController::class)->middleware(['auth']);;;
 
-    Route::resource('pos', PosController::class)->middleware(['auth']);;;
-
-    Route::get('/pos/add-to-cart/{productId}', [PosController::class, 'addToCart'])->name('pos.addToCart'); 
-
-
-    Route::resource('users', UserController::class)->middleware(['auth']);;;
-
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('transaction', TransactionController::class);
+    Route::get('transaction/{id}', 'TransactionController@show')->name('transaction.show');
+    Route::post('/transaction/detail/create', [TransactionDetailController::class, 'create'])->name('transaction.detail.create');
+    Route::get('/transaction/detail/delete', [TransactionDetailController::class, 'delete'])->name('transaction.detail.delete');
+    Route::post('/transaction/detail/selesai/{id}', [TransactionDetailController::class, 'done']);
+    Route::get('transaction/reduce-stock/{productId}/{qty}', [TransactionController::class, 'reduceStock'])->name('transaction.reduce-stock');
+    Route::get('/transactions/filter', [TransactionController::class, 'filter'])->name('transactions.filter');
 });
 
 require __DIR__ . '/auth.php';

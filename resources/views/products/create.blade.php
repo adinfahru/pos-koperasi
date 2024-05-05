@@ -1,12 +1,12 @@
 <x-app-layout>
     <div class="p-12 mt-6 bg-white rounded-lg shadow-xs">
-
+        
         <form method="POST" action="{{ route('products.store')}}" enctype="multipart/form-data">
             @csrf
             <div class="space-y-12">
                 <div class="border-b border-gray-900/10 pb-12">
                     <h2 class="text-base font-semibold leading-7 text-gray-900">Tambah Produk</h2>
-
+                    
                     <div class="mt-5 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
                         <div class="sm:col-span-6">
                             <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Nama Produk</label>
@@ -16,7 +16,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        
                         <div class="sm:col-span-2">
                             <label for="category" class="block text-sm font-medium leading-6 text-gray-900">Pilih Kategori</label>
                             <div class="mt-2">
@@ -24,7 +24,6 @@
                                     <option>Makanan</option>
                                     <option>Minuman</option>
                                     <option>Perabotan</option>
-                                    <option>Sembako</option>
                                     <option>Obat-Obatan</option>
                                     <option>Lainnya</option>
                                 </select>

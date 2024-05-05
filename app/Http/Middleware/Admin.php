@@ -9,20 +9,14 @@ use Illuminate\Support\Facades\Auth;
 
 class Admin
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
     public function handle(Request $request, Closure $next): Response
     {
-
-        if(Auth::user()->role !== 'admin')
-        
-        {
+        // Check if the user's role is either 'admin' or 'manager'
+        if (Auth::user()->role !== 'admin' && Auth::user()->role !== 'manager') {
             return redirect('dashboard');
         } 
 
         return $next($request);
     }
 }
+
