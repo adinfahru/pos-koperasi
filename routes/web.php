@@ -37,9 +37,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/transaction/detail/delete', [TransactionDetailController::class, 'delete'])->name('transaction.detail.delete');
     Route::post('/transaction/detail/selesai/{id}', [TransactionDetailController::class, 'done']);
     Route::get('transaction/reduce-stock/{productId}/{qty}', [TransactionController::class, 'reduceStock'])->name('transaction.reduce-stock');
-
-    Route::resource('transaksi', PenjualanDetailController::class);
-    
+    Route::get('/transactions/filter', [TransactionController::class, 'filter'])->name('transactions.filter');
 });
 
 require __DIR__ . '/auth.php';

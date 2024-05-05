@@ -19,14 +19,33 @@ class TransactionController extends Controller
         $transaction_detail = TransactionDetail::get();
         $transactions = Transaction::with('customer')->orderBy('created_at', 'desc')->paginate(10);
         return view('transaction.index', compact('transactions', 'transaction_detail'));
-        
     }
+
+    public function filter(Request $request)
+    {
+        // Retrieve start and end dates from the request
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
+
+        // Increment the end date by one day to include transactions on the end date
+        $end_date = date('Y-m-d', strtotime($end_date . ' + 1 day'));
+
+        // Query transactions based on the filter criteria
+        $transactions = Transaction::with('customer')
+            ->whereBetween('created_at', [$start_date, $end_date])
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+
+        // Pass the filtered transactions to the view
+        return view('transaction.index', compact('transactions'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create(Request $request)
-    {   
+    {
         $existingTransaction = Transaction::where('user_id', auth()->user()->id)->where('status', '!=', 'selesai')->first();
 
         // Jika sudah ada, arahkan pengguna ke halaman edit transaksi yang sudah ada
@@ -40,7 +59,7 @@ class TransactionController extends Controller
         ];
 
         $transaction = Transaction::create($data);
-        
+
         return redirect('transaction/' . $transaction->id . '/edit');
     }
 
@@ -61,7 +80,6 @@ class TransactionController extends Controller
         $transaction = Transaction::findOrFail($id);
         $transaction_detail = TransactionDetail::where('transaction_id', $id)->get();
         return view('transaction.show', compact('transaction', 'transaction_detail'));
-
     }
 
 
