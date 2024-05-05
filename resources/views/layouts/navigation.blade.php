@@ -40,8 +40,8 @@
                 </x-nav-link>
             </li>
 
-            <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('pos.index') ? 'bg-blue-100 rounded-md' : '' }}">
-                <x-nav-link href="{{ route('pos.index') }}" :active="request()->routeIs('pos.index')">
+            <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('transaction.create') ? 'bg-blue-100 rounded-md' : '' }}">
+                <x-nav-link href="{{ route('transaction.create') }}" :active="request()->routeIs('transaction.create')">
                     <x-slot name="icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="10" cy="20.5" r="1" />
@@ -49,22 +49,22 @@
                             <path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1" />
                         </svg>
                     </x-slot>
-                    {{ __('POS') }}
+                    {{ __('Cashier') }}
                 </x-nav-link>
             </li>
 
-            <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('#') ? 'bg-blue-100 rounded-md' : '' }}">
-                <x-nav-link href="#" :active="request()->routeIs('#')">
+            <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('transaction.index') ? 'bg-blue-100 rounded-md' : '' }}">
+                <x-nav-link href="{{ route('transaction.index') }}" :active="request()->routeIs('transaction.index')">
                     <x-slot name="icon">
                         <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                             <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                         </svg>
                     </x-slot>
-                    {{ __('Sales History') }}
+                    {{ __('Transaction History') }}
                 </x-nav-link>
             </li>
 
-            <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('#') ? 'bg-blue-100 rounded-md' : '' }}">
+            <!-- <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('#') ? 'bg-blue-100 rounded-md' : '' }}">
                 <x-nav-link href="#" :active="request()->routeIs('#')">
                     <x-slot name="icon">
                         <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -73,7 +73,7 @@
                     </x-slot>
                     {{ __('Purchase History') }}
                 </x-nav-link>
-            </li>
+            </li> -->
             @endcan
             @can('user')
             <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('#') ? 'bg-blue-100 rounded-md' : '' }}">
