@@ -6,13 +6,14 @@
                     <div class="bg-white rounded-lg shadow-md p-5 mb-3 border">
                         <div class="grid grid-cols-1 gap-y-4 sm:grid-cols-6">
                             <div class="sm:col-span-6">
-                                <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Transaksi</label>
+                                <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Cari Produk</label>
                                 <form method="GET" action="">
                                     <div class="flex">
-                                        <select name="product_id" id="" class="block w-full text-xs rounded-md shadow-sm border-gray-300 focus:border-indigo-600 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                                            <option value="">{{ isset($p_detail) ? $p_detail->name : 'Nama Produk' }}</option>
+                                        <select name="product_id" class="block w-full text-xs rounded-md shadow-sm border-gray-300 focus:border-indigo-600 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                                             @foreach ($products as $product)
-                                            <option value="{{ $product->id }}">{{' ID '.$product->id.' - ' . $product->name }}</option>
+                                            @if ($product->stock > 0)
+                                            <option value="{{ $product->id }}">ID {{ $product->id }} - {{ $product->name }} - Stok : {{ $product->stock }}</option>
+                                            @endif
                                             @endforeach
                                         </select>
                                         <button type="submit" class="rounded-md bg-indigo-600 text-xs px-2 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500">Pilih</button>
@@ -65,9 +66,11 @@
                             @method('POST')
                             <div class="flex">
                                 <select name="customer" id="customer" class="block w-full text-xs rounded-md shadow-sm border-gray-300 focus:border-indigo-600 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" required>
-                                    <option value="">Pilih User</option>
+                                    <option value="">Pilih Customer</option>
                                     @foreach ($users as $user)
+                                    @if ($user->id!== auth()->id())
                                     <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                    @endif
                                     @endforeach
                                 </select>
                             </div>
@@ -79,7 +82,7 @@
                                         <th class="px-4 py-3">Nama Produk</th>
                                         <th class="px-4 py-3">Quantity</th>
                                         <th class="px-4 py-3">Subtotal</th>
-                                        <th class="px-4 py-3">#</th>
+                                        <th class="px-4 py-3">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y dark:divide-gray-300 dark:bg-gray-50">

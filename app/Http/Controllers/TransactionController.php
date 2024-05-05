@@ -17,7 +17,7 @@ class TransactionController extends Controller
     public function index()
     {
         $transaction_detail = TransactionDetail::get();
-        $transactions = Transaction::with('customer')->orderBy('created_at', 'desc')->paginate();
+        $transactions = Transaction::with('customer')->orderBy('created_at', 'desc')->paginate(10);
         return view('transaction.index', compact('transactions', 'transaction_detail'));
         
     }

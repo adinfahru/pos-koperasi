@@ -8,7 +8,8 @@
                         <div class="">
                         <p class="text-gray-600"><strong>Transaction ID:</strong> {{ $transaction->id }}</p>
                         <p class="text-gray-600"><strong>Customer Name:</strong> {{ $transaction->customer ? $transaction->customer->name : '' }}</p>
-                        <p class="text-gray-600"><strong>Created At:</strong> {{ $transaction->created_at }}</p>
+                        <p class="text-gray-600"><strong>Tanggal:</strong> {{ $transaction->created_at->timezone('Asia/Jakarta')->format('d-m-Y') }}</p>
+                        <p class="text-gray-600"><strong>Jam:</strong> {{ $transaction->created_at->timezone('Asia/Jakarta')->format('H:i:s') }}</p>
                         <p class="text-gray-600"><strong>Status:</strong> {{ $transaction->status }}</p>
                         <p class="text-gray-600"><strong>Total:</strong> {{ $transaction->total }}</p>
                     </div>
@@ -35,7 +36,7 @@
                     </div>
                 </div>
                 <div class="mt-4">
-                    <a href="" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Back to Transaction</a>
+                    <a href="/transaction" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Back to Transaction</a>
                 </div>
             </div>
         </div>
