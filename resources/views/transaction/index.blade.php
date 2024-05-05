@@ -12,7 +12,8 @@
                     <table class="w-full whitespace-no-wrap">
                         <thead>
                             <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 bg-gray-200 uppercase border">
-                                <th class="px-4 py-3">Tanggal</th>
+                                <th class="px-4 py-3">Tanggal & Jam</th>
+                                <th class="px-4 py-3">Status</th>
                                 <th class="px-4 py-3">Total</th>
                                 <th class="px-4 py-3">Actions</th>
                             </tr>
@@ -21,9 +22,10 @@
                             @foreach ($transactions as $transaction)
                             <tr>
                                 <td class="px-4 py-3">{{ $transaction->created_at }}</td>
+                                <td class="px-4 py-3">{{ $transaction->status }}</td>
                                 <td class="px-4 py-3">{{ $transaction->total }}</td>
                                 <td class="px-4 py-3">
-                                    <!-- Actions -->
+                                <a href="{{ route('transaction.show', $transaction->id) }}" class="btn btn-info">View</a>
                                 </td>
                             </tr>
                             @endforeach
@@ -34,7 +36,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </x-app-layout>

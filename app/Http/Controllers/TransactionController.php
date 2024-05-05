@@ -13,17 +13,25 @@ class TransactionController extends Controller
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
-        $transactions = Transaction::paginate();
-        return view('transaction.index', compact('transactions'));
+        $transaction_detail = TransactionDetail::get();
+        $transactions = Transaction::orderBy('created_at', 'desc')->paginate();
+        return view('transaction.index', compact('transactions', 'transaction_detail'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
-    {   
+    {
+        $existingTransaction = Transaction::where('user_id', auth()->user()->id)->where('status', '!=', 'selesai')->first();
+
+        // Jika sudah ada, arahkan pengguna ke halaman edit transaksi yang sudah ada
+        if ($existingTransaction) {
+            return redirect('transaction/' . $existingTransaction->id . '/edit');
+        }
 
         $data = [
             'user_id' => auth()->user()->id,
@@ -31,7 +39,7 @@ class TransactionController extends Controller
         ];
 
         $transaction = Transaction::create($data);
-        return redirect('transaction/'.$transaction->id. '/edit');
+        return redirect('transaction/' . $transaction->id . '/edit');
     }
 
 
@@ -46,10 +54,14 @@ class TransactionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $transaction = Transaction::findOrFail($id);
+        $transaction_detail = TransactionDetail::where('transaction_id', $id)->get();
+        return view('transaction.show', compact('transaction', 'transaction_detail'));
+
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -59,6 +71,7 @@ class TransactionController extends Controller
         $products = Products::get();
         $transaction_detail = TransactionDetail::whereTransactionId($id)->get();
         $users = User::get();
+        $user_id = request('user_id');
 
         $product_id = request('product_id');
         $p_detail = Products::find($product_id);
@@ -80,7 +93,12 @@ class TransactionController extends Controller
         // Check if $p_detail is not null before accessing its properties
         $subtotal = $p_detail ? $qty * $p_detail->price : 0;
 
-        return view('transaction.create', compact('transaction_detail', 'products', 'p_detail', 'qty', 'subtotal', 'users'));
+        $transaction = Transaction::find($id);
+
+        $dibayarkan = request('dibayarkan');
+        $kembalian = $dibayarkan - $transaction->total;
+
+        return view('transaction.create', compact('user_id', 'users', 'kembalian', 'transaction', 'transaction_detail', 'products', 'p_detail', 'qty', 'subtotal', 'users'));
     }
 
     /**

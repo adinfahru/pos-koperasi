@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('transaction_details', function (Blueprint $table) {
             $table->id();
             $table->foreignId('transaction_id');
+            $table->foreignId('user_id');
             $table->foreignId('product_id');
             $table->string('product_name');
             $table->string('qty');

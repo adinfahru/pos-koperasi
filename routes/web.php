@@ -31,8 +31,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('products', ProductsController::class)->middleware(['auth']);;;
 
     Route::resource('transaction', TransactionController::class);
+    Route::get('transaction/{id}', 'TransactionController@show')->name('transaction.show');
     Route::post('/transaction/detail/create', [TransactionDetailController::class, 'create'])->name('transaction.detail.create');
-
+    Route::get('/transaction/detail/delete', [TransactionDetailController::class, 'delete'])->name('transaction.detail.delete');
+    Route::get('/transaction/detail/selesai/{id}', [TransactionDetailController::class, 'done']);
+    
 });
 
 require __DIR__ . '/auth.php';
