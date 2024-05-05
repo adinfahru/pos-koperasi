@@ -12,5 +12,6 @@ class ShuController extends Controller
         $users = User::all();
         return view('anggota.shu', ['users' => $users]);
 
+        
     }
 }

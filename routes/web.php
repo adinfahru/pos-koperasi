@@ -18,6 +18,7 @@ Route::get('/dashboard', function () {
 
 Route::resource('shu', ShuController::class)->middleware(['auth']);;;
 
+
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::view('about', 'about')->name('about');
 
