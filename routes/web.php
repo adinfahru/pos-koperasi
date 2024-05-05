@@ -41,7 +41,3 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 require __DIR__ . '/auth.php';
-
-Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('admin/index', [AdminController::class, 'index']);
-});
