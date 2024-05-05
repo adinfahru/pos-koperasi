@@ -12,7 +12,9 @@
                     <table class="w-full whitespace-no-wrap">
                         <thead>
                             <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 bg-gray-200 uppercase border">
+                                <th class="px-4 py-3">Transaksi ID</th>
                                 <th class="px-4 py-3">Tanggal & Jam</th>
+                                <th class="px-4 py-3">Customer</th>
                                 <th class="px-4 py-3">Status</th>
                                 <th class="px-4 py-3">Total</th>
                                 <th class="px-4 py-3">Actions</th>
@@ -21,19 +23,20 @@
                         <tbody>
                             @foreach ($transactions as $transaction)
                             <tr>
-                                <td class="px-4 py-3">{{ $transaction->created_at }}</td>
+                                <td class="px-4 py-3">{{ $transaction->id }}</td>
+                                <td class="px-4 py-3">{{ $transaction->created_at->timezone('Asia/Jakarta')->format('Y-m-d H:i:s') }}</td>
+                                <td class="px-4 py-3">{{ $transaction->customer ? $transaction->customer->name : '' }}</td>
                                 <td class="px-4 py-3">{{ $transaction->status }}</td>
                                 <td class="px-4 py-3">{{ $transaction->total }}</td>
                                 <td class="px-4 py-3">
-                                <a href="{{ route('transaction.show', $transaction->id) }}" class="btn btn-info">View</a>
+                                    <a href="{{ route('transaction.show', $transaction->id) }}" class="btn btn-info">View</a>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
-                    </table>
-                    <div class="mt-4">
-                        {{ $transactions->links() }}
-                    </div>
+                        <div class="mt-4">
+                            {{ $transactions->links() }}
+                        </div>
                 </div>
             </div>
         </div>

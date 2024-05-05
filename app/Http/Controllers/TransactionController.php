@@ -17,15 +17,16 @@ class TransactionController extends Controller
     public function index()
     {
         $transaction_detail = TransactionDetail::get();
-        $transactions = Transaction::orderBy('created_at', 'desc')->paginate();
+        $transactions = Transaction::with('customer')->orderBy('created_at', 'desc')->paginate();
         return view('transaction.index', compact('transactions', 'transaction_detail'));
+        
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
+    public function create(Request $request)
+    {   
         $existingTransaction = Transaction::where('user_id', auth()->user()->id)->where('status', '!=', 'selesai')->first();
 
         // Jika sudah ada, arahkan pengguna ke halaman edit transaksi yang sudah ada
@@ -39,6 +40,7 @@ class TransactionController extends Controller
         ];
 
         $transaction = Transaction::create($data);
+        
         return redirect('transaction/' . $transaction->id . '/edit');
     }
 

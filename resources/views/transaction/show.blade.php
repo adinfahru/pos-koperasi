@@ -7,6 +7,7 @@
                         <h2 class="text-xl font-bold mb-2">Transaction Details</h2>
                         <div class="">
                         <p class="text-gray-600"><strong>Transaction ID:</strong> {{ $transaction->id }}</p>
+                        <p class="text-gray-600"><strong>Customer Name:</strong> {{ $transaction->customer ? $transaction->customer->name : '' }}</p>
                         <p class="text-gray-600"><strong>Created At:</strong> {{ $transaction->created_at }}</p>
                         <p class="text-gray-600"><strong>Status:</strong> {{ $transaction->status }}</p>
                         <p class="text-gray-600"><strong>Total:</strong> {{ $transaction->total }}</p>

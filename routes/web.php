@@ -1,11 +1,12 @@
 <?php
 
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TransactionDetailController;
+use App\Http\Controllers\PenjualanDetailController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -34,7 +35,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('transaction/{id}', 'TransactionController@show')->name('transaction.show');
     Route::post('/transaction/detail/create', [TransactionDetailController::class, 'create'])->name('transaction.detail.create');
     Route::get('/transaction/detail/delete', [TransactionDetailController::class, 'delete'])->name('transaction.detail.delete');
-    Route::get('/transaction/detail/selesai/{id}', [TransactionDetailController::class, 'done']);
+    Route::post('/transaction/detail/selesai/{id}', [TransactionDetailController::class, 'done']);
+
+    Route::resource('transaksi', PenjualanDetailController::class);
     
 });
 
