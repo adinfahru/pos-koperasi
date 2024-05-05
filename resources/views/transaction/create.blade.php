@@ -12,7 +12,7 @@
                                         <select name="product_id" class="block w-full text-xs rounded-md shadow-sm border-gray-300 focus:border-indigo-600 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
                                             @foreach ($products as $product)
                                             @if ($product->stock > 0)
-                                            <option value="{{ $product->id }}">ID {{ $product->id }} - {{ $product->name }} - Stok : {{ $product->stock }}</option>
+                                            <option value="{{ $product->id }}">{{ $product->name }} - Stok : {{ $product->stock }}</option>
                                             @endif
                                             @endforeach
                                         </select>
@@ -48,10 +48,10 @@
                                         </div>
                                     </div>
                                     <div class="sm:col-span-6 mt-3">
-                                        <h5 class="block text-md font-medium leading-6 text-gray-900 mr-4">Subtotal : Rp. {{ $subtotal }}</h5>
+                                        <h5 class="block text-md mb-3 font-medium leading-6 text-gray-900 mr-4">Subtotal : Rp. {{ $subtotal }}</h5>
                                     </div>
                                     <div class="sm:col-span-6 space-x-4">
-                                        <button type="submit" class="p-2 w-full text-xs rounded-md bg-indigo-600 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add</button>
+                                        <button type="submit" class="p-2 w-full text-xs rounded-md bg-indigo-600 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Tambah Produk</button>
                                     </div>
                                 </form>
                             </div>
@@ -113,7 +113,7 @@
                                 <div class="sm:col-span-6">
                                     <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Total Belanja</label>
                                     <div class="mt-2">
-                                        <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                                        <div class="flex rounded-md bg-gray-200 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                                             <input value="{{ $transaction->total }}" disabled type="number" name="total_belanja" id="" class="block flex-1 border-0 bg-transparent py-1.5 pl-2 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
                                         </div>
                                     </div>

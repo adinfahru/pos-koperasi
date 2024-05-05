@@ -25,7 +25,7 @@
                     <td class="px-4 py-3 capitalize">{{ $transaction->status }}</td>
                     <td class="px-4 py-3">{{ $transaction->total }}</td>
                     <td class="px-4 py-3">
-                        <a href="{{ route('transaction.show', $transaction->id) }}" class="rounded-md bg-indigo-600 p-1 text-sm text-xs font-semibold text-white shadow-sm hover:bg-indigo-500">View</a>
+                        <a href="{{ route('transaction.show', $transaction->id) }}" class="rounded-md bg-teal-500 p-1 text-sm text-xs font-semibold text-white shadow-sm hover:bg-indigo-500">View</a>
                     </td>
                 </tr>
                 @endforeach
