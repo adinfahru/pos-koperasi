@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PosController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\SalesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/sales', function () {
+    return view('sales.index');
+})->middleware(['auth', 'verified'])->name('sales.index');
+
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::view('about', 'about')->name('about');
 
@@ -22,12 +27,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('admin', [AdminController::class, 'index'])->name('admin.index')->middleware(['auth']);;;
 
+    Route::get('sales', [SalesController::class, 'index'])->name('sales.index')->middleware(['auth']);;;
+
     Route::resource('products', ProductsController::class)->middleware(['auth']);;;
 
     Route::resource('pos', PosController::class)->middleware(['auth']);;;
 
     Route::get('/pos/add-to-cart/{productId}', [PosController::class, 'addToCart'])->name('pos.addToCart'); 
-
 
     Route::resource('users', UserController::class)->middleware(['auth']);;;
 
@@ -36,8 +42,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__ . '/auth.php';
-
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin/index', [AdminController::class, 'index']);
 });
+
+require __DIR__ . '/auth.php';
