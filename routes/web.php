@@ -6,7 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TransactionDetailController;
-use App\Http\Controllers\PenjualanDetailController;
+use App\Http\Controllers\AnggotaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -39,5 +39,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('transaction/reduce-stock/{productId}/{qty}', [TransactionController::class, 'reduceStock'])->name('transaction.reduce-stock');
     Route::get('/transactions/filter', [TransactionController::class, 'filter'])->name('transactions.filter');
 });
+
+Route::get('/anggota/dashboard', [AnggotaController::class, 'index'])->name('anggota.dashboard');
+Route::get('/anggota/{userId}/transaction.history', 'AnggotaController@transactionHistory');
+
+
 
 require __DIR__ . '/auth.php';
