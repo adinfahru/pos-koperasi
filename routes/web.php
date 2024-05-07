@@ -34,6 +34,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware('auth')->group(function () {
+    Route::view('history', 'history')->name('history');
+
+    Route::view('shu', 'shu')->name('shu');
+
+});
+
 require __DIR__.'/auth.php';
 
 Route::middleware(['auth', 'admin'])->group(function () {
