@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="mt-4">
-                    <a href="/transaction" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Back to Transaction</a>
+                    <a href="{{ route('anggota.history') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Back to Transaction</a>
                 </div>
             </div>
         </div>
