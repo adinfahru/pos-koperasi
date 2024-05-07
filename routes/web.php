@@ -41,8 +41,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::get('/anggota/dashboard', [AnggotaController::class, 'index'])->name('anggota.dashboard');
-Route::get('/anggota/{userId}/transaction.history', 'AnggotaController@transactionHistory');
-
+Route::get('/anggota/history', [AnggotaController::class, 'history'])->name('anggota.history');
+Route::get('/anggota/shu', [AnggotaController::class, 'shu'])->name('anggota.shu');
 
 
 require __DIR__ . '/auth.php';
