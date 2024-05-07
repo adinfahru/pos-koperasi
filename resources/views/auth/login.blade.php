@@ -46,7 +46,6 @@
                 <hr class="my-8" />
 
                 <div class="flex flex-col items-center gap-4">
-
                     @if (Route::has('password.request'))
                     <p class="">
                         <a class="text-sm font-medium text-primary-600 hover:underline"

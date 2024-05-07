@@ -71,9 +71,17 @@ class ProductsController extends Controller
         $product->price = $request->price;
         $product->purchase = $request->purchase;
 
+        // Check if a new image file has been uploaded (Kevin)
+        if ($request->hasFile('image')) {
+            // Move the new image file to the desired directory
+            $request->file('image')->move('fotoProduk/', $request->file('image')->getClientOriginalName());
+            // Update the image attribute of the existing product with the new file name
+            $product->image = $request->file('image')->getClientOriginalName();
+        }
+        // Save the changes to the product
         $product->save();
 
-        return redirect()->route('products.index')->with('success', 'Product updated successfully');
+        return redirect()->route('products.index')->with('success', 'Product updated successfully');
     }
 
     /**
@@ -81,6 +89,7 @@ class ProductsController extends Controller
      */
     public function destroy(string $id)
     {
+
         $product = Products::findOrFail($id);
         $product ->delete();
         return redirect()->route('products.index')->with('success','Product deleted successfully');
