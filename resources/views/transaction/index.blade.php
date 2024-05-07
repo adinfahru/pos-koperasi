@@ -26,7 +26,8 @@
             <thead>
                 <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 bg-gray-200 uppercase border">
                     <th class="px-4 py-3">Transaksi ID</th>
-                    <th class="px-4 py-3">Tanggal & Jam</th>
+                    <th class="px-4 py-3">Tanggal</th>
+                    <th class="px-4 py-3">Jam</th>
                     <th class="px-4 py-3">Customer</th>
                     <th class="px-4 py-3">Status</th>
                     <th class="px-4 py-3">Total</th>
@@ -37,9 +38,10 @@
                 @foreach ($transactions as $transaction)
                 <tr>
                     <td class="px-4 py-3">{{ $transaction->id }}</td>
-                    <td class="px-4 py-3">{{ $transaction->created_at->timezone('Asia/Jakarta')->format('Y-m-d - H:i:s') }}</td>
+                    <td class="px-4 py-3">{{ $transaction->created_at->timezone('Asia/Jakarta')->format('d-m-Y') }}</td>
+                    <td class="px-4 py-3">{{ $transaction->created_at->timezone('Asia/Jakarta')->format('H:i:s') }}</td>
                     <td class="px-4 py-3">{{ $transaction->customer? $transaction->customer->name : '' }}</td>
-                    <td class="px-4 py-3 capitalize">{{ $transaction->status }}</td>
+                    <td class="px-4 py-3 capitalize font-bold text-red-500">{{ $transaction->status }}</td>
                     <td class="px-4 py-3">{{ $transaction->total }}</td>
                     <td class="px-4 py-3">
                         <a href="{{ route('transaction.show', $transaction->id) }}" class="rounded-md bg-teal-500 p-1 text-sm text-xs font-semibold text-white shadow-sm hover:bg-indigo-500">View</a>
