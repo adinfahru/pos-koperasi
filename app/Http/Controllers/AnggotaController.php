@@ -65,6 +65,15 @@ class AnggotaController extends Controller
 
     public function shu()
     {
-        return view('anggota.shu');
+        // Mendapatkan total transaksi dari pelanggan yang sedang login
+        $totalTransactions = Transaction::where('customer_id', auth()->user()->id)->count();
+
+        // Menghitung nilai SHU berdasarkan jumlah transaksi
+        $shuValue = $totalTransactions * 1000; // Misalnya, nilai SHU per transaksi adalah 1000
+
+        // Memformat nilai SHU menjadi format rupiah
+        $formattedShu = number_format($shuValue, 0, ',', '.');
+
+        return view('anggota.shu', compact('formattedShu', 'totalTransactions'));
     }
 }
