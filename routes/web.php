@@ -42,6 +42,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::get('/anggota/dashboard', [AnggotaController::class, 'index'])->name('anggota.dashboard');
 Route::get('/anggota/history', [AnggotaController::class, 'history'])->name('anggota.history');
+Route::get('/anggota/history/{id}', [AnggotaController::class, 'show'])->name('anggota.show');
 Route::get('/anggota/shu', [AnggotaController::class, 'shu'])->name('anggota.shu');
 
 

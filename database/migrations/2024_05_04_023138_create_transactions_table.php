@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
+            $table->foreignId('cashier_id');
             $table->string('customer_id')->default('Unknown');
             $table->bigInteger('total');
             $table->enum('status', ['selesai', 'pending'])->default('pending');
