@@ -1,7 +1,9 @@
 <x-app-layout>
+<!-- Title and Total Transactions -->
 <h1>Transaction History</h1>
 <h1>Total Transaksi ({{ $totalTransactions }})</h1>
-
+<!-- Title Close -->
+<!-- History Table -->
 @if ($transactions->count() > 0)
 <table class="table">
     <thead>
@@ -25,9 +27,11 @@
         @endforeach
     </tbody>
 </table>
-
+<!-- History Close -->
+<!-- Else if condition (Null) -->
 {{ $transactions->links() }}
 @else
 <p>No transactions found.</p>
 @endif
+<!-- Else if close -->
 </x-app-layout>

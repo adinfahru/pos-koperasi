@@ -4,6 +4,7 @@
             <div class="w-full lg:w-3/4">
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
                     <div class="p-4">
+                        <!-- List Details -->
                         <h2 class="text-xl font-bold mb-2">Transaction Details</h2>
                         <div class="">
                         <p class="text-gray-600"><strong>Transaction ID:</strong> {{ $transaction->id }}</p>
@@ -17,6 +18,7 @@
                         <div class="overflow-x-auto">
                             <table class="w-full whitespace-no-wrap">
                                 <thead>
+                                    <!-- Transaction Table Details -->
                                     <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 bg-gray-200 uppercase border-b">
                                         <th class="px-4 py-3">Product Name</th>
                                         <th class="px-4 py-3">Quantity</th>
@@ -37,6 +39,7 @@
                     </div>
                 </div>
                 <div class="mt-4">
+                    <!-- 'Back to Transaction' back button -->
                     <a href="{{ route('anggota.history') }}" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Back to Transaction</a>
                 </div>
             </div>
