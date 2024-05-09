@@ -24,9 +24,9 @@
                         <tbody class="bg-white divide-y">
                             @foreach ($transaction_detail as $detail)
                             <tr>
-                                <td class="px-4 py-2">{{ $detail->product_name }}</td>
-                                <td class="px-4 py-2">{{ $detail->qty }}</td>
-                                <td class="px-4 py-2">{{ $detail->subtotal }}</td>
+                                <td class="px-4 py-2 text-black">{{ $detail->product_name }}</td>
+                                <td class="px-4 py-2 text-black">{{ $detail->qty }}</td>
+                                <td class="px-4 py-2 text-black">{{ $detail->subtotal }}</td>
                             </tr>
                             @endforeach
                         </tbody>
