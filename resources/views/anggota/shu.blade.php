@@ -5,17 +5,17 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6">
-            <h1>Total Transaksi {{ $totalTransactions }} x Rp. 1000</h1>
+    <div class="px-8 py-12 mx-auto md:px-12 lg:px-32 max-w-7xl">
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <div class="bg-white w-96 h-40 p-5 overflow-hidden border shadow-xl rounded-xl flex justify-start items-center flex-col">
+                <h1 class="text-center text-xl">Total Transaksi</h1>
+                <br>
+                <h1 class="text-center text-4xl">{{ $totalTransactions }}</h1>
             </div>
-        </div>
-    </div>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6">
-                <p>Nilai SHU Anda berdasarkan jumlah transaksi: Rp {{ $formattedShu }}</p>
+            <div class="bg-white w-96 h-40 p-5 overflow-hidden border shadow-xl rounded-xl flex justify-start items-center flex-col">
+                <h1 class="text-center text-xl">Nilai SHU Anda</h1>
+                <br>
+                <h1 class="text-center text-4xl">Rp {{ $formattedShu }}</h1>
             </div>
         </div>
     </div>
