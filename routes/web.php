@@ -2,12 +2,12 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductsController;
-use App\Http\Controllers\SalesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TransactionDetailController;
-use App\Http\Controllers\PenjualanDetailController;
+use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\ProfitController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,10 +17,6 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/sales', function () {
-    return view('sales.index');
-})->middleware(['auth', 'verified'])->name('sales.index');
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -34,8 +30,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('admin', [AdminController::class, 'index'])->name('admin.index')->middleware(['auth']);;;
 
-    Route::get('sales', [SalesController::class, 'index'])->name('sales.index')->middleware(['auth']);;;
-
     Route::resource('products', ProductsController::class)->middleware(['auth']);;;
 
     Route::resource('transaction', TransactionController::class);
@@ -45,10 +39,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post('/transaction/detail/selesai/{id}', [TransactionDetailController::class, 'done']);
     Route::get('transaction/reduce-stock/{productId}/{qty}', [TransactionController::class, 'reduceStock'])->name('transaction.reduce-stock');
     Route::get('/transactions/filter', [TransactionController::class, 'filter'])->name('transactions.filter');
+
+    Route::get('/manager/profit', [ProfitController::class, 'index'])->name('manager.profit');
 });
 
-Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('admin/index', [AdminController::class, 'index']);
-});
+Route::get('/anggota/dashboard', [AnggotaController::class, 'index'])->name('anggota.dashboard');
+Route::get('/anggota/history', [AnggotaController::class, 'history'])->name('anggota.history');
+Route::get('/anggota/history/{id}', [AnggotaController::class, 'show'])->name('anggota.show');
+Route::get('/anggota/shu', [AnggotaController::class, 'shu'])->name('anggota.shu');
+
 
 require __DIR__ . '/auth.php';
