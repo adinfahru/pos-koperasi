@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Products;
 use App\Models\User;
+use App\Models\Transaction;
 
 class AdminController extends Controller
 {
@@ -12,7 +13,8 @@ class AdminController extends Controller
         
         $products = Products::all();
         $users = User::all();
-        return view('admin.index', ['products' => $products, 'users' => $users]);
+        $transactions = Transaction::all();
+        return view('admin.index', ['products' => $products, 'users' => $users, 'transactions' => $transactions]);
         
     }
 

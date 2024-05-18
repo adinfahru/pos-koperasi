@@ -1,74 +1,263 @@
 <x-app-layout>
-    <x-slot name="header">
-        {{ __('Admin Dashboard') }}
-    </x-slot>
-
-    <div class="mt-5  rounded-lg shadow-xs">
-        <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
-            <!-- Card -->
-            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs border">
-                <div class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
-                    </svg>
+    <body>
+        <!-- Header -->
+        <h1 class="mx-10 pt-10 text-3xl font-bold text-left rtl:text-right text-gray-900 dark:text-black">Dashboard</h1>
+        <h2 class="mx-10 pt-2 text-base font-regular text-left rtl:text-right text-gray-500">Dashboard Pembelian dan Penjualan</h2>
+        <!-- Main -->
+        <div class="mt-5 flex justify-center">
+                <div
+                    class="mx-3 my-5 w-[350px] aspect-video rounded-lg shadow flex flex-col items-center justify-center gap-2 bg-slate-50 group"
+                    >
+                    <div
+                        class="flex flex-col items-center p-8 rounded-md w-full sm:px-12 bg-gray-100 text-gray-900"
+                    >
+                        <div class="text-center">
+                        <h2 class="text-xl font-semibold">Anggota Koperasi</h2>
+                        <p class="text-sm text-gray-400">Total Anggota Koperasi</p>
+                        </div>
+                        <svg
+                        class="w-32 h-32 p-6 -red-400 fill-current animate-[spin_5s_linear_infinite;]"
+                        viewBox="0 0 512 512"
+                        xmlns="http://www.w3.org/2000/svg"
+                        >
+                        <path
+                            d="M256,104c-83.813,0-152,68.187-152,152s68.187,152,152,152,152-68.187,152-152S339.813,104,256,104Zm0,272A120,120,0,1,1,376,256,120.136,120.136,0,0,1,256,376Z"
+                        ></path>
+                        <rect
+                            class="animate-[pulse_1s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            y="16"
+                            x="240"
+                            height="48"
+                            width="32"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_2s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            y="448"
+                            x="240"
+                            height="48"
+                            width="32"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_1s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            y="240"
+                            x="448"
+                            height="32"
+                            width="48"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_2s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            y="240"
+                            x="16"
+                            height="32"
+                            width="48"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_1s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            transform="rotate(-45 416 416)"
+                            y="393.373"
+                            x="400"
+                            height="45.255"
+                            width="32"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_2s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            transform="rotate(-45 96 96)"
+                            y="73.373"
+                            x="80"
+                            height="45.255"
+                            width="32.001"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_1s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            transform="rotate(-45.001 96.002 416.003)"
+                            y="400"
+                            x="73.373"
+                            height="32"
+                            width="45.255"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_2s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            transform="rotate(-45 416 96)"
+                            y="80"
+                            x="393.373"
+                            height="32.001"
+                            width="45.255"
+                        ></rect>
+                        </svg>
+                        <div class="mb-2 text-3xl font-semibold">
+                            {{$users->count()}}
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <p class="mb-2 text-sm font-medium">
-                        Anggota Koperasi
-                    </p>
-                    <p class="text-md font-semibold">
-                        {{$users->count()}}
-                    </p>
+                <div
+                    class="mx-3 my-5 w-[350px] aspect-video rounded-lg shadow flex flex-col items-center justify-center gap-2 bg-slate-50 group"
+                    >
+                    <div
+                        class="flex flex-col items-center p-8 rounded-md w-full sm:px-12 bg-gray-100 text-gray-900"
+                    >
+                        <div class="text-center">
+                        <h2 class="text-xl font-semibold">Transaksi</h2>
+                        <p class="text-sm text-gray-400">Total Transaksi Anggota</p>
+                        </div>
+                        <svg
+                        class="w-32 h-32 p-6 -red-400 fill-current animate-[spin_5s_linear_infinite;]"
+                        viewBox="0 0 512 512"
+                        xmlns="http://www.w3.org/2000/svg"
+                        >
+                        <path
+                            d="M256,104c-83.813,0-152,68.187-152,152s68.187,152,152,152,152-68.187,152-152S339.813,104,256,104Zm0,272A120,120,0,1,1,376,256,120.136,120.136,0,0,1,256,376Z"
+                        ></path>
+                        <rect
+                            class="animate-[pulse_1s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            y="16"
+                            x="240"
+                            height="48"
+                            width="32"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_2s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            y="448"
+                            x="240"
+                            height="48"
+                            width="32"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_1s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            y="240"
+                            x="448"
+                            height="32"
+                            width="48"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_2s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            y="240"
+                            x="16"
+                            height="32"
+                            width="48"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_1s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            transform="rotate(-45 416 416)"
+                            y="393.373"
+                            x="400"
+                            height="45.255"
+                            width="32"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_2s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            transform="rotate(-45 96 96)"
+                            y="73.373"
+                            x="80"
+                            height="45.255"
+                            width="32.001"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_1s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            transform="rotate(-45.001 96.002 416.003)"
+                            y="400"
+                            x="73.373"
+                            height="32"
+                            width="45.255"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_2s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            transform="rotate(-45 416 96)"
+                            y="80"
+                            x="393.373"
+                            height="32.001"
+                            width="45.255"
+                        ></rect>
+                        </svg>
+                        <div class="mb-2 text-3xl font-semibold">
+                            {{$transactions->count( )}}
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!-- Card -->
-            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs border">
-                <div class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                    </svg>
-                </div>
-                <div>
-                    <p class="mb-2 text-sm font-medium">
-                        Today Sales
-                    </p>
-                    <p class="text-md font-semibold">
-                        Rp. 2.000.000
-                    </p>
-                </div>
-            </div>
-            <!-- Card -->
-            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs border">
-                <div class="p-3 mr-4 text-blue-500 bg-blue-100 rounded-full dark:text-blue-100 dark:bg-blue-500">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
-                    </svg>
-                </div>
-                <div>
-                    <p class="mb-2 text-sm font-medium">
-                        Transaksi
-                    </p>
-                    <p class="text-md font-semibold">
-                        20
-                    </p>
-                </div>
-            </div>
-            <!-- Card -->
-            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs border">
-                <div class="p-3 mr-4 text-teal-500 bg-teal-100 rounded-full dark:text-teal-100 dark:bg-teal-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0" />
-                    </svg>
-                </div>
-                <div>
-                    <p class="mb-2 text-sm font-medium">
-                        Produk
-                    </p>
-                    <p class="text-md font-semibold">
-                        {{ $products->count() }}
-                    </p>
+                <div
+                    class="mx-3 my-5 w-[350px] aspect-video rounded-lg shadow flex flex-col items-center justify-center gap-2 bg-slate-50 group"
+                    >
+                    <div
+                        class="flex flex-col items-center p-8 rounded-md w-full sm:px-12 bg-gray-100 text-gray-900"
+                    >
+                        <div class="text-center">
+                        <h2 class="text-xl font-semibold">Produk</h2>
+                        <p class="text-sm text-gray-400">Total Produk Koperasi</p>
+                        </div>
+                        <svg
+                        class="w-32 h-32 p-6 -red-400 fill-current animate-[spin_5s_linear_infinite;]"
+                        viewBox="0 0 512 512"
+                        xmlns="http://www.w3.org/2000/svg"
+                        >
+                        <path
+                            d="M256,104c-83.813,0-152,68.187-152,152s68.187,152,152,152,152-68.187,152-152S339.813,104,256,104Zm0,272A120,120,0,1,1,376,256,120.136,120.136,0,0,1,256,376Z"
+                        ></path>
+                        <rect
+                            class="animate-[pulse_1s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            y="16"
+                            x="240"
+                            height="48"
+                            width="32"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_2s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            y="448"
+                            x="240"
+                            height="48"
+                            width="32"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_1s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            y="240"
+                            x="448"
+                            height="32"
+                            width="48"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_2s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            y="240"
+                            x="16"
+                            height="32"
+                            width="48"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_1s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            transform="rotate(-45 416 416)"
+                            y="393.373"
+                            x="400"
+                            height="45.255"
+                            width="32"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_2s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            transform="rotate(-45 96 96)"
+                            y="73.373"
+                            x="80"
+                            height="45.255"
+                            width="32.001"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_1s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            transform="rotate(-45.001 96.002 416.003)"
+                            y="400"
+                            x="73.373"
+                            height="32"
+                            width="45.255"
+                        ></rect>
+                        <rect
+                            class="animate-[pulse_2s_cubic-bezier(0.4,_0,_0.6,_1)_infinite;]"
+                            transform="rotate(-45 416 96)"
+                            y="80"
+                            x="393.373"
+                            height="32.001"
+                            width="45.255"
+                        ></rect>
+                        </svg>
+                        <div class="mb-2 text-3xl font-semibold">
+                            {{$products->count()}}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </body>
 </x-app-layout>
