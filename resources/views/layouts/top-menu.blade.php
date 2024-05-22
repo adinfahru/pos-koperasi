@@ -1,4 +1,4 @@
-<header class="z-10 py-2 bg-white border-b">
+<header class="z-10 py-2 bg-white border-b" x-data="{ isNotificationMenuOpen: false, isProfileMenuOpen: false }">
     <div class="container flex justify-between items-center px-6 mx-auto h-full text-purple-600 md:justify-end">
         <!-- Mobile hamburger -->
         <button class="p-1 mr-5 -ml-1 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple" @click="toggleSideMenu" aria-label="Menu">
@@ -7,11 +7,32 @@
             </svg>
         </button>
 
+        <!-- Notification Dropdown -->
+        @can('manager')
+            @if($lowStockProducts->isNotEmpty())
+                <div class="relative" @click.away="isNotificationMenuOpen = false">
+                    <button class="relative z-10 block p-2 bg-red-600 text-white rounded-full focus:outline-none" @click="isNotificationMenuOpen = !isNotificationMenuOpen">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.5V11a6 6 0 10-12 0v3.5c0 .638-.252 1.243-.672 1.695L4 17h5m0 0v1a3 3 0 006 0v-1m-6 0h6"></path>
+                        </svg>
+                        <span class="absolute top-0 right-0 block h-2 w-2 transform translate-x-1 -translate-y-1 bg-red-600 border-2 border-white rounded-full"></span>
+                    </button>
+                    <div x-show="isNotificationMenuOpen" class="absolute right-0 z-20 w-48 mt-2 py-2 bg-white border rounded-lg shadow-xl">
+                        <ul>
+                            @foreach($lowStockProducts as $product)
+                                <li class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{{ $product->name }}: {{ $product->stock }} left</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            @endif
+        @endcan
+
         <x-dropdown>
             <x-slot name="trigger">
                 <button class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none" 
-                @click="toggleProfileMenu" 
-                @keydown.escape="closeProfileMenu" 
+                @click="isProfileMenuOpen = !isProfileMenuOpen" 
+                @keydown.escape="isProfileMenuOpen = false" 
                 aria-label="Account" 
                 aria-haspopup="true"
                 >
@@ -43,6 +64,27 @@
                 </form>
             </x-slot>
         </x-dropdown>
-
     </div>
 </header>
+
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('dropdown', () => ({
+            isNotificationMenuOpen: false,
+            isProfileMenuOpen: false,
+            toggleNotificationMenu() {
+                this.isNotificationMenuOpen = !this.isNotificationMenuOpen;
+            },
+            closeNotificationMenu() {
+                this.isNotificationMenuOpen = false;
+            },
+            toggleProfileMenu() {
+                this.isProfileMenuOpen = !this.isProfileMenuOpen;
+            },
+            closeProfileMenu() {
+                this.isProfileMenuOpen = false;
+            }
+        }));
+    });
+</script>
+
