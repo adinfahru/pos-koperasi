@@ -28,8 +28,14 @@ class AnggotaController extends Controller
             }
         }
 
-        // Pass the leaderboard data and the position of the logged-in customer to the view
-        return view('anggota.dashboard', compact('leaderboard', 'loggedInCustomerPosition'));
+        // Get the latest five transactions
+        $latestTransactions = Transaction::where('customer_id', auth()->id())
+            ->orderBy('created_at', 'desc')
+            ->take(5)
+            ->get();
+
+        // Pass the leaderboard data, the position of the logged-in customer, and the latest transactions to the view
+        return view('anggota.dashboard', compact('leaderboard', 'loggedInCustomerPosition', 'latestTransactions'));
     }
 
     /**
