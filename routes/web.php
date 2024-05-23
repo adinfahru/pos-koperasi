@@ -43,7 +43,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/transactions/filter', [TransactionController::class, 'filter'])->name('transactions.filter');
 
     Route::get('/rekap/index', [RecapController::class, 'index'])->name('rekap.index');
-  
     Route::get('/manager/stock', [StockController::class, 'lowStock'])->name('manager.stock');
     Route::get('/manager/profit', [ProfitController::class, 'index'])->name('manager.profit');
 });
