@@ -2,12 +2,14 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\StockController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TransactionDetailController;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\ProfitController;
+use App\Http\Controllers\RecapController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -40,6 +42,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('transaction/reduce-stock/{productId}/{qty}', [TransactionController::class, 'reduceStock'])->name('transaction.reduce-stock');
     Route::get('/transactions/filter', [TransactionController::class, 'filter'])->name('transactions.filter');
 
+    Route::get('/rekap/index', [RecapController::class, 'index'])->name('rekap.index');
+  
+    Route::get('/manager/stock', [StockController::class, 'lowStock'])->name('manager.stock');
     Route::get('/manager/profit', [ProfitController::class, 'index'])->name('manager.profit');
 });
 
@@ -47,6 +52,7 @@ Route::get('/anggota/dashboard', [AnggotaController::class, 'index'])->name('ang
 Route::get('/anggota/history', [AnggotaController::class, 'history'])->name('anggota.history');
 Route::get('/anggota/history/{id}', [AnggotaController::class, 'show'])->name('anggota.show');
 Route::get('/anggota/shu', [AnggotaController::class, 'shu'])->name('anggota.shu');
+
 
 
 require __DIR__ . '/auth.php';

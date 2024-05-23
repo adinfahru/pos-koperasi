@@ -30,10 +30,10 @@
                 </div>
                 <div>
                     <p class="mb-2 text-sm font-medium">
-                        Today Sales
+                        Total Sales
                     </p>
                     <p class="text-md font-semibold">
-                        Rp. 2.000.000
+                        {{$totalSales}}
                     </p>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                         Transaksi
                     </p>
                     <p class="text-md font-semibold">
-                        20
+                        {{$transactions->count()}}
                     </p>
                 </div>
             </div>

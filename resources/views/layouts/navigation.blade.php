@@ -63,6 +63,17 @@
                     {{ __('Transaction History') }}
                 </x-nav-link>
             </li>
+           
+            <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('transaction.index') ? 'bg-blue-100 rounded-md' : '' }}">
+                <x-nav-link href="{{ route('rekap.index') }}" :active="request()->routeIs('rekap.index')">
+                    <x-slot name="icon">
+                        <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                    </x-slot>
+                    {{ __('Rekap') }}
+                </x-nav-link>
+            </li>
             @endcan
 
             @can('manager')
@@ -88,15 +99,37 @@
                     {{ __('Transaction History') }}
                 </x-nav-link>
             </li>
-
-            <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('transaction.index') ? 'bg-blue-100 rounded-md' : '' }}">
-                <x-nav-link href="{{ route('manager.profit') }}" :active="request()->routeIs('transaction.index')">
+            
+            <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('') ? 'bg-blue-100 rounded-md' : '' }}">
+                <x-nav-link href="" :active="request()->routeIs('')">
                     <x-slot name="icon">
                         <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                             <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                         </svg>
                     </x-slot>
-                    {{ __('Profit Recap') }}
+                    {{ __('Purchasing Report') }}
+                </x-nav-link>
+            </li>
+
+            <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('') ? 'bg-blue-100 rounded-md' : '' }}">
+                <x-nav-link href="{{ route('manager.profit')}}" :active="request()->routeIs('manager.profit')">
+                    <x-slot name="icon">
+                        <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                    </x-slot>
+                    {{ __('Sales Report') }}
+                </x-nav-link>
+            </li>
+
+            <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('manager.stock') ? 'bg-blue-100 rounded-md' : '' }}">
+                <x-nav-link href="{{ route('manager.stock')}}" :active="request()->routeIs('manager.stock')">
+                    <x-slot name="icon">
+                        <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                    </x-slot>
+                    {{ __('Low Stock Product') }}
                 </x-nav-link>
             </li>
             @endcan
