@@ -6,7 +6,7 @@
                     <span>Koperasi Jaya</span>
                 </a>
             </div>
-            <div class="flex-col items-center text-xs gap-12 text-sm font-medium text-indigo-800 md:flex md:flex-row lg:p-0 md:mt-0">
+            <div class="flex-col items-center text-xs gap-12  font-medium text-indigo-800 md:flex md:flex-row lg:p-0 md:mt-0">
                 <a class="hover:text-blue-600 focus:outline-none focus:text-gray-500 md:ml-auto" href="#_">Beranda</a>
                 <a class="hover:text-blue-600 focus:outline-none focus:text-gray-500 md:ml-auto" href="#_">Profile</a>
                 <a class="hover:text-blue-600 focus:outline-none focus:text-gray-500 md:ml-auto" href="#_">Info Berita</a>

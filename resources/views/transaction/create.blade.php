@@ -16,7 +16,7 @@
                                             @endif
                                             @endforeach
                                         </select>
-                                        <button type="submit" class="rounded-md bg-indigo-600 text-xs px-2 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500">Pilih</button>
+                                        <button type="submit" class="rounded-md bg-indigo-600 text-xs px-2 py-2 font-semibold text-white shadow-sm hover:bg-indigo-500">Pilih</button>
                                     </div>
                                 </form>
                             </div>
@@ -93,13 +93,13 @@
                                         <td class="px-4 py-3">{{ $item->qty}}</td>
                                         <td class="px-4 py-3">{{ $item->subtotal}}</td>
                                         <td class="px-4 py-3">
-                                            <a href="/transaction/detail/delete?id={{ $item->id }}" class="rounded-md bg-red-600 p-1 text-sm text-xs font-semibold text-white shadow-sm hover:bg-red-500">Hapus</a>
+                                            <a href="/transaction/detail/delete?id={{ $item->id }}" class="rounded-md bg-red-600 p-1 text-xs font-semibold text-white shadow-sm hover:bg-red-500">Hapus</a>
                                         </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
                             </table>
-                            <button type="submit" class="mt-5 rounded-md bg-indigo-600 p-1 text-sm text-xs font-semibold text-white shadow-sm hover:bg-indigo-500">Simpan Transaksi</button>
+                            <button type="submit" class="mt-5 rounded-md bg-indigo-600 p-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500">Simpan Transaksi</button>
                         </form>
                     </div>
                 </div>
@@ -126,7 +126,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button class="rounded-md bg-indigo-600 p-1 text-sm text-xs font-semibold text-white shadow-sm hover:bg-indigo-500">Hitung</button>
+                                <button class="rounded-md bg-indigo-600 p-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500">Hitung</button>
                                 <div class="sm:col-span-6">
                                     <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Uang Kembalian</label>
                                     <div class="mt-2">

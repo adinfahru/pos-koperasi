@@ -8,6 +8,7 @@
     <title>Koperasi Jaya</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="{{ asset('js/init-alpine.js') }}"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
 </head>
