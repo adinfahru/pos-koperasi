@@ -32,7 +32,7 @@
                         <td class="px-6 py-4 dark:text-black">
                             {{ $transaction->total}}
                         </td>
-                        <td class="px-6 py-4 dark:text-black">
+                        <td class="px-6 py-4 dark:text-black capitalize">
                             {{ $transaction->status}}
                         </td>
                         <td class="px-6 py-4"> <!-- Adjusted alignment -->
