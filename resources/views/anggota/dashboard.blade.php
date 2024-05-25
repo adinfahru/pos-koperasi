@@ -10,8 +10,8 @@
                     <table class="table-auto w-full">
                         <thead>
                             <tr class="border-b border-gray-200">
-                                <th class="px-4 py-2 text-left text-sm font-medium text-gray-500">Pelanggan</th>
-                                <th class="px-4 py-2 text-right text-sm font-medium text-gray-500">Transaksi</th>
+                                <th class="px-4 py-2 text-left text-sm font-bold text-gray-500">Pelanggan</th>
+                                <th class="px-4 py-2 text-right text-sm font-bold text-gray-500">Total Transaksi</th>
                             </tr>
                         </thead>
                         <tbody>
