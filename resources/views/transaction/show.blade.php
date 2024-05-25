@@ -7,7 +7,6 @@
                         <h2 class="text-xl font-bold mb-2">Transaction Details</h2>
                         <div class="">
                         <p class="text-gray-600"><strong>Transaction ID:</strong> {{ $transaction->id }}</p>
-                        <p class="text-gray-600"><strong>Cashier Name:</strong> {{ $transaction->cashier ? $transaction->cashier->name : '' }}</p>
                         <p class="text-gray-600"><strong>Customer Name:</strong> {{ $transaction->customer ? $transaction->customer->name : '' }}</p>
                         <p class="text-gray-600"><strong>Tanggal:</strong> {{ $transaction->created_at->timezone('Asia/Jakarta')->format('d-m-Y') }}</p>
                         <p class="text-gray-600"><strong>Jam:</strong> {{ $transaction->created_at->timezone('Asia/Jakarta')->format('H:i:s') }}</p>

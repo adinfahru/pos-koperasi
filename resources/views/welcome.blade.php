@@ -18,10 +18,8 @@
                     Ekonomi Sejahtera
                     <span class="text-indigo-800">Bersama Koperasi Jaya</span>
                 </h1>
-                <p class="mt-4 text-base font-medium text-indigo-800 text-balance">
-                    Control and added security. With decentralization, users have more
-                    control over their data and transactions, and the platform is less
-                    susceptible to malicious attacks.
+                <p class="italic mt-4 text-base font-medium text-indigo-800 text-balance">
+                    " Maju terus Koperasi Indonesia, sejahtera rakyat Indonesia "
                 </p>
             </div>
             <div class="space-y-2">
@@ -102,24 +100,19 @@
                     </div>
                 </div>
                 <div class="text-center">
-                <h1 class=" mt-6 text-xl font-semibold tracking-tighter text-indigo-900 lg:text-6xl text-balance">
-                    SEMUA KEBUTUHAN ANDA ADA DI
-                    <span class="text-indigo-800">KOPERASIJAYA</span>
-                </h1>
-                <p class="mt-4 text-base font-medium text-indigo-800 text-balance">
-                    KOPERASIJAYA menyediakan segala kebutuhan anda terkait koperasi serba usaha. Mari kita lihat apa saja yang bisa dilakukan.
-                </p> <br>
-            </div>
+                    <h1 class="mt-10 mb-10 text-3xl font-semibold tracking-tighter text-indigo-900 text-balance">
+                        Kenapa Harus Koperasi Jaya?
+                    </h1>
+                </div>
                 <div class="grid gap-2 lg:grid-flow-col-dense lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-3">
                     <div class="max-w-lg min-w-full mx-auto lg:col-start-3">
                         <div class="flex h-full">
                             <div class="flex flex-col justify-center p-8 border bg-indigo-50  rounded-3xl max-w-none">
-                                <h2 class="font-medium text-gray-900">Dashboard Pembelian dan Penjualan</h2>
+                                <h2 class="font-bold text-gray-900">Leaderboard</h2>
                                 <p class="mt-4 text-sm font-medium text-gray-500 text-pretty">
-                                    You must give appropriate credit to the original creator of the
-                                    work. This typically includes providing the name of the author
-                                    or licensor, a link to the original work, and indicating if
-                                    changes were made.
+                                Dengan sistem leaderboard kami yang menghitung berdasarkan banyaknya transaksi, 
+                                Anda dapat bersaing secara sehat dan melihat pencapaian Anda naik ke puncak. 
+                                Bergabunglah dengan kami dan rasakan semangat persaingan yang sehat serta kemajuan yang nyata.
                                 </p>
                             </div>
                         </div>
@@ -127,7 +120,7 @@
                     <div class="lg:col-start-1 lg:col-span-2">
                         <div>
                             <div class="relative h-full p-2 overflow-hidden border rounded-3xl">
-                                <img src="../images/placeholders/rectangle1.svg" class="object-cover h-full border shadow-2xl rounded-2xl">
+                                <img src="{{ asset('images/Laravel.png') }}" class="object-cover h-full border shadow-2xl rounded-2xl">
                             </div>
                         </div>
                     </div>
@@ -136,15 +129,12 @@
                     <div class="max-w-lg min-w-full mx-auto">
                         <div class="flex h-full">
                             <div class="flex flex-col justify-center p-8 border bg-indigo-50  rounded-3xl max-w-none">
-                                <h2 class="font-medium text-gray-900">
-                                    Memasukkan Data Pembelian Barang
-                                </h2>
+                                <h2 class="font-bold text-gray-900">History Pembelian</h2>
                                 <p class="mt-4 text-sm font-medium text-gray-500 text-pretty">
-                                    The CC BY 3.0 License does not include a "Share Alike" (SA)
-                                    provision. Unlike some other Creative Commons licenses, it does
-                                    not require you to license any derivative works under the same
-                                    terms. You can create adaptations or derivatives and license
-                                    them differently if you choose.
+                                Dengan layanan history pembelian yang terperinci, 
+                                Koperasi Jaya memastikan setiap langkah Anda tercatat dengan sempurna. 
+                                Kami memberikan transparansi penuh dan akses mudah ke catatan transaksi Anda, 
+                                sehingga Anda dapat melacak jejak keuangan Anda dengan mudah dan memperoleh kepercayaan yang tak tergoyahkan."
                                 </p>
                             </div>
                         </div>
@@ -152,95 +142,98 @@
                     <div class="lg:col-span-2">
                         <div>
                             <div class="relative h-full p-2 overflow-hidden border rounded-3xl">
-                                <img src="../images/placeholders/rectangle1.svg" class="object-cover h-full border shadow-2xl rounded-2xl">
+                                <img src="{{ asset('images/Laravel.png') }}" class="object-cover h-full border shadow-2xl rounded-2xl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid gap-2 lg:grid-flow-col-dense lg:max-w-7xl lg:mx-auto lg:grid lg:grid-cols-3">
+                    <div class="max-w-lg min-w-full mx-auto lg:col-start-3">
+                        <div class="flex h-full">
+                            <div class="flex flex-col justify-center p-8 border bg-indigo-50  rounded-3xl max-w-none">
+                                <h2 class="font-bold text-gray-900">Sisa Hasil Usaha</h2>
+                                <p class="mt-4 text-sm font-medium text-gray-500 text-pretty">
+                                Kami memahami pentingnya mengelola hasil usaha dengan bijak. 
+                                Dengan fitur sisa hasil usaha kami, Anda dapat dengan mudah melihat dan mengelola pengeluaran serta penghasilan Anda. 
+                                Kami memberikan alat yang Anda butuhkan untuk membuat keputusan finansial yang cerdas dan mengarahkan usaha Anda menuju kesuksesan yang berkelanjutan.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-start-1 lg:col-span-2">
+                        <div>
+                            <div class="relative h-full p-2 overflow-hidden border rounded-3xl">
+                                <img src="{{ asset('images/Laravel.png') }}" class="object-cover h-full border shadow-2xl rounded-2xl">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="text-center">
-                <h2 class="mt-20 text-xl font-semibold tracking-tighter text-indigo-900 lg:text-4xl text-balance">
-                    Fitur Lainnya
-                </h2>
-                <div class="grid gap-2 mt-2 text-center md:grid-cols-3">
-                    <div>
-                        <div class="p-2 overflow-hidden border rounded-3xl">
-                            <img src="../images/placeholders/rectangle1.svg" alt="#_" class="w-full h-full mx-auto rounded-2xl">
+                    <h2 class="mb-10 mt-10 text-3xl font-semibold tracking-tighter text-indigo-900 text-balance">
+                        Benefit Lainnya
+                    </h2>
+                    <div class="grid gap-2 mt-2 text-center md:grid-cols-3">
+                        <div>
+                            <div class="p-2 overflow-hidden border rounded-3xl">
+                                <img src="{{ asset('images/Laravel.png') }}" alt="#_" class="w-full h-full mx-auto rounded-2xl">
+                            </div>
+                            <div class="mt-4">
+                                <p class="font-medium text-gray-900">Laporan Rekap Bulanan Anggota</p>
+                            </div>
                         </div>
-                        <div class="mt-4">
-                            <p class="font-medium text-gray-900">Laporan Rekap Pembelian Barang</p>
-                            <p class="mt-2 text-sm text-gray-500">
-                                The license comes with no warranties. The licensor provides the
-                                work "as is," and users must use it at their own risk.
-                            </p>
+                        <div>
+                            <div class="p-2 overflow-hidden border rounded-3xl">
+                                <img src="{{ asset('images/Laravel.png') }}" alt="#_" class="w-full h-full mx-auto rounded-2xl">
+                            </div>
+                            <div class="px-8 mt-4">
+                                <p class="font-medium text-gray-900">Customer Service 24/7</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="p-2 overflow-hidden border rounded-3xl">
-                            <img src="../images/placeholders/rectangle1.svg" alt="#_" class="w-full h-full mx-auto rounded-2xl">
-                        </div>
-                        <div class="px-8 mt-4">
-                            <p class="font-medium text-gray-900">Mencatat Tranksaksi Penjualan</p>
-                            <p class="mt-2 text-sm text-gray-500">
-                                You can adapt, remix, transform, and build upon the licensed work.
-                            </p>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="p-2 overflow-hidden border rounded-3xl">
-                            <img src="../images/placeholders/rectangle1.svg" alt="#_" class="w-full h-full mx-auto rounded-2xl">
-                        </div>
-                        <div class="px-8 mt-4">
-                            <p class="font-medium text-gray-900">Rekap History Penjualan</p>
-                            <p class="mt-2 text-sm text-gray-500">
-                                You are allowed to use the licensed work for both non-commercial
-                                and commercial purposes.
-                            </p>
+                        <div>
+                            <div class="p-2 overflow-hidden border rounded-3xl">
+                                <img src="{{ asset('images/Laravel.png') }}" alt="#_" class="w-full h-full mx-auto rounded-2xl">
+                            </div>
+                            <div class="px-8 mt-4">
+                                <p class="font-medium text-gray-900">SHU yang Bersaing</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
-<footer class="px-8 bg-indigo-800 py-12 mx-auto md:px-12 lg:px-32 max-w-auto">
-    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-        <div class="text-white">
-            <p class="text-xl font-semibold font-bold uppercase">KOPERASIJAYA</p>
-            <p class="mt-2 text-sm text-white font-medium text-gray-500 lg:w-4/5">
-                Alamat: Jl. Telekomunikasi No. 5, Terusan Buah Batu, Bandung 40275
-                <span class="lg:block"> Email: support@koperasijaya.co.id</span>
-                <span class="lg:block"> Telp: (+62) 11 397 243 2 </span>
-            </p>
-        </div>
-        <div class="flex justify-center xl:col-span-2">
+    <footer class="px-8 bg-indigo-800 py-12 mx-auto md:px-12 lg:px-32 max-w-auto">
+        <div class="xl:grid xl:grid-cols-2 xl:gap-8">
             <div class="text-white">
-                <h3 class="text-xl font-semibold font-bold uppercase">Socials</h3>
-                <ul role="list" class="mt-2 space-y-2">
-                    <li>
-                        <a href="#_" class="hover:text-gray-500 font-medium lg:w-4/5">
-                            Youtube
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#_" class="hover:text-gray-500 font-medium lg:w-4/5">
-                            Instagram
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#_" class="hover:text-gray-500 font-medium lg:w-4/5">
-                            Facebook
-                        </a>
-                    </li>
-                </ul>
+                <p class="text-xl font-bold">Koperasi Jaya</p>
+                <p class="mt-2 text-sm text-white font-medium text-gray-500 lg:w-4/5">
+                    Alamat: Jl. Telekomunikasi No. 5, Terusan Buah Batu, Bandung 40275
+                    <span class="lg:block"> Email: support@koperasijaya.co.id</span>
+                    <span class="lg:block"> Telp: (+62) 851-5696-3834</span>
+                </p>
+            </div>
+        <div class="xl:grid xl:grid-cols-1 xl:gap-8">
+            <div class="text-white">
+                <p class="text-xl font-bold">Teams 5</p>
+                <p class="mt-2 text-sm font-medium">
+                    <ul>
+                        <li>Mohamad Fahrudin</li>
+                        <li>M Hasbi Asshiddiqqi</li>
+                        <li>Aria Riezki Fadhila</li>
+                        <li>R Rama Ahmad Waliyya</li>
+                        <li>Kevin Fritz Angelo</li>
+                        <li>Josia Fortino</li>
+                        <li>Rayhan Maulana</li>
+                    </ul>
+                </p>
             </div>
         </div>
-    </div>
-    <div class="flex flex-col pt-12 md:flex-row md:items-center md:justify-between">
-        <span class="text-sm text-white font-medium text-gray-500">
-            Copyright © <span x-text="year">2024</span>
-            <a aria-label="Michael Andreuzza" href="#_" class="text-blue-500 hover:text-gray-500">KOPERASIJAYA</a>
-            Since 2024
-        </span>
-    </div>
-</footer>
+        <div class="flex flex-col pt-12 md:flex-row md:items-center md:justify-between">
+            <span class="text-sm text-white font-medium text-gray-500">
+                Copyright © <span x-text="year">2024</span>
+                <a href="#_" class="text-white hover:text-blue-50">Koperasi Jaya</a>
+            </span>
+        </div>
+    </footer>
 </body>
+
 </html>

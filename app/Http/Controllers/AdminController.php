@@ -14,7 +14,8 @@ class AdminController extends Controller
         $products = Products::all();
         $users = User::all();
         $transactions = Transaction::all();
-        return view('admin.index', ['products' => $products, 'users' => $users, 'transactions' => $transactions]);
+        $totalSales = Transaction::sum('total');
+        return view('admin.index', compact('products','users','transactions','totalSales'));
         
     }
 
