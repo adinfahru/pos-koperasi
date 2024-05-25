@@ -46,7 +46,7 @@ class TransactionController extends Controller
      */
     public function create(Request $request)
     {
-        $existingTransaction = Transaction::where('user_id', auth()->user()->id)->where('status', '!=', 'selesai')->first();
+        $existingTransaction = Transaction::where('cashier_id', auth()->user()->id)->where('status', '!=', 'selesai')->first();
 
         // Jika sudah ada, arahkan pengguna ke halaman edit transaksi yang sudah ada
         if ($existingTransaction) {
@@ -54,7 +54,7 @@ class TransactionController extends Controller
         }
 
         $data = [
-            'user_id' => auth()->user()->id,
+            'cashier_id' => auth()->user()->id,
             'total' => 0,
         ];
 
