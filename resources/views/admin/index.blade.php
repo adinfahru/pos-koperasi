@@ -1,10 +1,9 @@
 <x-app-layout>
-<<<<<<< HEAD
     <body>
         <!-- Background container -->
         <div class="main-container" style="background-image:url('{{ asset('/images/gradient-indigo-purple.png') }}'); background-size: cover; background-position: center;">
             <!-- Header -->
-            <h1 class="mx-10 pt-10 text-3xl font-bold text-left rtl:text-right text-white dark:text-white">Dashboard</h1>
+            <h1 class="mx-10 pt-10 text-3xl font-bold text-left rtl:text-right text-white dark:text-white">{{ Auth::user()->name }} Dashboard</h1>
                 <h2 class="mx-10 pt-2 text-base font-regular text-left rtl:text-right text-gray-300">Dashboard Pembelian dan Penjualan</h2>
                 <!-- Main -->
                 <div class="mt-5 mb-10 flex justify-center">
@@ -84,29 +83,44 @@
                             </div>
                         </div>
                     </div>
-=======
-    <x-slot name="header">
-        {{ Auth::user()->name }} Dashboard
-    </x-slot>
+                </div>
+        </div>
+        <!-- Pembelian Stok -->
+        <!-- Penjualan/Transaction History -->
+        <canvas id="transactionChart" width="400" height="200"></canvas>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+                // Ambil data transaksi dari PHP dan buat array untuk jumlah transaksi per bulan
+                var transactionData = {!! json_encode($transactionData) !!};
 
-    <div class="mt-5  rounded-lg shadow-xs">
-        <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
-            <!-- Card -->
-            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs border">
-                <div class="p-3 mr-4 text-orange-500 bg-orange-100 rounded-full dark:text-orange-100 dark:bg-orange-500">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
-                    </svg>
-                </div>
-                <div>
-                    <p class="mb-2 text-sm font-medium">
-                        Anggota Koperasi
-                    </p>
-                    <p class="text-md font-semibold">
-                        {{$users->count()}}
-                    </p>
->>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
-                </div>
-            </div>
+                // Proses data untuk grafik
+                var labels = Object.keys(transactionData);
+                var data = Object.values(transactionData);
+
+                // Buat grafik menggunakan Chart.js
+                var ctx = document.getElementById('transactionChart').getContext('2d');
+                var transactionChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Jumlah Transaksi per Bulan',
+                            data: data,
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+            </script>
     </body>
 </x-app-layout>
