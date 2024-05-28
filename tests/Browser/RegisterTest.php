@@ -15,13 +15,19 @@ class RegisterTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
-                    ->clickLink('register')
+                    ->clickLink('Register')
+                    ->assertPathIs('/register')
+                    ->assertSee('Create account')
+                    ->assertSee('Name')
                     ->type('name','User')
+                    ->assertSee('Email')
                     ->type('email','User1@gmai.com')
+                    ->assertSee('Password')
                     ->type('password','User12345')
+                    ->assertSee('Confirm Password')
                     ->type('password_confirmation','User12345')
+                    ->assertSee('Register')
                     ->press('Register');
-                    
         });
     }
 }
