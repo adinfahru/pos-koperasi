@@ -1112,6 +1112,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v11.7.0",
             "source": {
                 "type": "git",
@@ -1122,6 +1123,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/e5ac72f513f635f208024aa76b8a04efc1b47f93",
                 "reference": "e5ac72f513f635f208024aa76b8a04efc1b47f93",
+=======
+            "version": "v11.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "e090ee638ebd4ce221d8bad43b49bbf59ea70ae5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/e090ee638ebd4ce221d8bad43b49bbf59ea70ae5",
+                "reference": "e090ee638ebd4ce221d8bad43b49bbf59ea70ae5",
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
                 "shasum": ""
             },
             "require": {
@@ -1313,7 +1326,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+<<<<<<< HEAD
             "time": "2024-05-07T13:41:51+00:00"
+=======
+            "time": "2024-04-30T13:30:08+00:00"
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
         },
         {
             "name": "laravel/prompts",
@@ -1995,6 +2012,7 @@
         },
         {
             "name": "nesbot/carbon",
+<<<<<<< HEAD
             "version": "3.3.1",
             "source": {
                 "type": "git",
@@ -2005,6 +2023,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/8ff64b92c1b1ec84fcde9f8bb9ff2ca34cb8a77a",
                 "reference": "8ff64b92c1b1ec84fcde9f8bb9ff2ca34cb8a77a",
+=======
+            "version": "3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/briannesbitt/Carbon.git",
+                "reference": "7219739c4e01d4680c980545821733b6ed8ee880"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/7219739c4e01d4680c980545821733b6ed8ee880",
+                "reference": "7219739c4e01d4680c980545821733b6ed8ee880",
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
                 "shasum": ""
             },
             "require": {
@@ -2097,7 +2127,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2024-05-01T06:54:22+00:00"
+=======
+            "time": "2024-04-18T16:35:06+00:00"
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
         },
         {
             "name": "nette/schema",
@@ -3640,6 +3674,7 @@
         },
         {
             "name": "symfony/event-dispatcher-contracts",
+<<<<<<< HEAD
             "version": "v3.5.0",
             "source": {
                 "type": "git",
@@ -3650,6 +3685,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/event-dispatcher-contracts/zipball/8f93aec25d41b72493c6ddff14e916177c9efc50",
                 "reference": "8f93aec25d41b72493c6ddff14e916177c9efc50",
+=======
+            "version": "v3.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/event-dispatcher-contracts.git",
+                "reference": "4e64b49bf370ade88e567de29465762e316e4224"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher-contracts/zipball/4e64b49bf370ade88e567de29465762e316e4224",
+                "reference": "4e64b49bf370ade88e567de29465762e316e4224",
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
                 "shasum": ""
             },
             "require": {
@@ -3696,7 +3743,11 @@
                 "standards"
             ],
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/event-dispatcher-contracts/tree/v3.5.0"
+=======
+                "source": "https://github.com/symfony/event-dispatcher-contracts/tree/v3.4.2"
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
             },
             "funding": [
                 {
@@ -3712,7 +3763,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2024-04-18T09:32:20+00:00"
+=======
+            "time": "2024-01-23T14:51:35+00:00"
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
         },
         {
             "name": "symfony/finder",
@@ -4987,6 +5042,7 @@
         },
         {
             "name": "symfony/service-contracts",
+<<<<<<< HEAD
             "version": "v3.5.0",
             "source": {
                 "type": "git",
@@ -4997,6 +5053,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/service-contracts/zipball/bd1d9e59a81d8fa4acdcea3f617c581f7475a80f",
                 "reference": "bd1d9e59a81d8fa4acdcea3f617c581f7475a80f",
+=======
+            "version": "v3.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/service-contracts.git",
+                "reference": "11bbf19a0fb7b36345861e85c5768844c552906e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/11bbf19a0fb7b36345861e85c5768844c552906e",
+                "reference": "11bbf19a0fb7b36345861e85c5768844c552906e",
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
                 "shasum": ""
             },
             "require": {
@@ -5050,7 +5118,11 @@
                 "standards"
             ],
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/service-contracts/tree/v3.5.0"
+=======
+                "source": "https://github.com/symfony/service-contracts/tree/v3.4.2"
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
             },
             "funding": [
                 {
@@ -5066,7 +5138,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2024-04-18T09:32:20+00:00"
+=======
+            "time": "2023-12-19T21:51:00+00:00"
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
         },
         {
             "name": "symfony/string",
@@ -5250,6 +5326,7 @@
         },
         {
             "name": "symfony/translation-contracts",
+<<<<<<< HEAD
             "version": "v3.5.0",
             "source": {
                 "type": "git",
@@ -5260,6 +5337,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/b9d2189887bb6b2e0367a9fc7136c5239ab9b05a",
                 "reference": "b9d2189887bb6b2e0367a9fc7136c5239ab9b05a",
+=======
+            "version": "v3.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/translation-contracts.git",
+                "reference": "43810bdb2ddb5400e5c5e778e27b210a0ca83b6b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/43810bdb2ddb5400e5c5e778e27b210a0ca83b6b",
+                "reference": "43810bdb2ddb5400e5c5e778e27b210a0ca83b6b",
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
                 "shasum": ""
             },
             "require": {
@@ -5308,7 +5397,11 @@
                 "standards"
             ],
             "support": {
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/translation-contracts/tree/v3.5.0"
+=======
+                "source": "https://github.com/symfony/translation-contracts/tree/v3.4.2"
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
             },
             "funding": [
                 {
@@ -5324,7 +5417,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2024-04-18T09:32:20+00:00"
+=======
+            "time": "2024-01-23T14:51:35+00:00"
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
         },
         {
             "name": "symfony/uid",
@@ -7945,6 +8042,7 @@
         },
         {
             "name": "spatie/ignition",
+<<<<<<< HEAD
             "version": "1.14.1",
             "source": {
                 "type": "git",
@@ -7955,6 +8053,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/spatie/ignition/zipball/c23cc018c5f423d2f413b99f84655fceb6549811",
                 "reference": "c23cc018c5f423d2f413b99f84655fceb6549811",
+=======
+            "version": "1.14.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/ignition.git",
+                "reference": "80385994caed328f6f9c9952926932e65b9b774c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/ignition/zipball/80385994caed328f6f9c9952926932e65b9b774c",
+                "reference": "80385994caed328f6f9c9952926932e65b9b774c",
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
                 "shasum": ""
             },
             "require": {
@@ -8024,6 +8134,7 @@
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
             "time": "2024-05-03T15:56:16+00:00"
         },
         {
@@ -8038,6 +8149,22 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/f52124d50122611e8a40f628cef5c19ff6cc5b57",
                 "reference": "f52124d50122611e8a40f628cef5c19ff6cc5b57",
+=======
+            "time": "2024-04-26T08:45:51+00:00"
+        },
+        {
+            "name": "spatie/laravel-ignition",
+            "version": "2.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-ignition.git",
+                "reference": "42d986f4ab9d667020264a7481190a4606ebbeb0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/42d986f4ab9d667020264a7481190a4606ebbeb0",
+                "reference": "42d986f4ab9d667020264a7481190a4606ebbeb0",
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
                 "shasum": ""
             },
             "require": {
@@ -8046,7 +8173,11 @@
                 "ext-mbstring": "*",
                 "illuminate/support": "^10.0|^11.0",
                 "php": "^8.1",
+<<<<<<< HEAD
                 "spatie/flare-client-php": "^1.5",
+=======
+                "spatie/flare-client-php": "^1.3.5",
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
                 "spatie/ignition": "^1.14",
                 "symfony/console": "^6.2.3|^7.0",
                 "symfony/var-dumper": "^6.2.3|^7.0"
@@ -8116,7 +8247,11 @@
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
             "time": "2024-05-02T13:42:49+00:00"
+=======
+            "time": "2024-04-30T13:56:21+00:00"
+>>>>>>> 50d7c3ca243377297e8f8063760101fc7ffbe323
         },
         {
             "name": "symfony/yaml",

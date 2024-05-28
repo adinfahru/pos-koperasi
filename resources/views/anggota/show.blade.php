@@ -18,10 +18,6 @@
                                         <td class="text-right px-20 py-2">{{ $transaction->id }}</td>
                                     </tr>
                                     <tr class="text-gray-500 dark:text-gray-600">
-                                        <th class="text-left px-8 py-2"><strong>Cashier Name:</strong></th>
-                                        <td class="text-right px-20 py-2">{{ $transaction->cashier ? $transaction->cashier->name : '' }}</td>
-                                    </tr>
-                                    <tr class="text-gray-500 dark:text-gray-600">
                                         <th class="text-left px-8 py-2"><strong>Customer Name:</strong></th>
                                         <td class="text-right px-20 py-2">{{ $transaction->customer ? $transaction->customer->name : '' }}</td>
                                     </tr>
