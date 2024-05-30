@@ -65,11 +65,13 @@ class ProductsController extends Controller
     {
         $product = Products::findOrFail($id);
 
+        $product->code = $request->code;
         $product->name = $request->name;
         $product->category = $request->category;
         $product->stock = $request->stock;
         $product->price = $request->price;
         $product->purchase = $request->purchase;
+        $product->purchasing_date = $request->purchasing_date;
 
         // Check if a new image file has been uploaded (Kevin)
         if ($request->hasFile('image')) {

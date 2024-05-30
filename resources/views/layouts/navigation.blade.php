@@ -25,7 +25,7 @@
                             <path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0" />
                         </svg>
                     </x-slot>
-                    {{ __('Products') }}
+                    {{ __('Master Products') }}
                 </x-nav-link>
             </li>
 
@@ -72,6 +72,17 @@
                         </svg>
                     </x-slot>
                     {{ __('Purchasing Report') }}
+                </x-nav-link>
+            </li>
+
+            <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('') ? 'bg-blue-100 rounded-md' : '' }}">
+                <x-nav-link href="" :active="request()->routeIs('')">
+                    <x-slot name="icon">
+                        <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                    </x-slot>
+                    {{ __('Request Products') }}
                 </x-nav-link>
             </li>
             @endcan

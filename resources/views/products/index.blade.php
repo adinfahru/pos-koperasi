@@ -10,9 +10,11 @@
                     <thead>
                         <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 bg-gray-200 uppercase border">
                             <th class="px-4 py-3">Nama Produk</th>
+                            <th class="px-4 py-3">Kode Barang</th>
                             <th class="px-4 py-3">Stok</th>
                             <th class="px-4 py-3">Harga Jual</th>
                             <th class="px-4 py-3">Harga Beli</th>
+                            <th class="px-4 py-3">Tanggal Pembelian</th>
                             <th class="px-4 py-3">Actions</th>
                         </tr>
                     </thead>
@@ -34,6 +36,9 @@
                                     </div>
                                 </div>
                             </td>
+                            <td class="px-4 py-3 text-sm uppercase">
+                                {{ $product->code }}
+                            </td>
                             <td class="px-4 py-3 text-sm">
                                 {{ $product->stock }}
                             </td>
@@ -42,6 +47,9 @@
                             </td>
                             <td class="px-4 py-3 text-sm">
                                 Rp. {{ $product->purchase }}
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                {{ $product->purchasing_date }}
                             </td>
                             <td class="px-4 py-3">
                                 <div class="flex items-center space-x-4 text-sm">
