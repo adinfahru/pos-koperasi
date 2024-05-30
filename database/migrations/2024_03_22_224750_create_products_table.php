@@ -15,13 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('code');
             $table->string('name');
-            $table->string('category');
+            $table->unsignedBigInteger('category_id'); // Change this line
             $table->integer('stock')->default(0);
             $table->decimal('price', 15, 2)->nullable();
             $table->decimal('purchase', 15, 2)->nullable();
             $table->date('purchasing_date');
             $table->string('image');
             $table->timestamps();
+        
+            // Add this line
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

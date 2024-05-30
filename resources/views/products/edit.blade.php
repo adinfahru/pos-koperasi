@@ -32,15 +32,12 @@
                     </div>
                     
                     <div class="w-full">
-                        <label for="category" class="block text-[16px] font-bold leading-6 text-gray-900">Pilih Kategori</label>
+                        <label for="category_id" class="block text-[16px] font-bold leading-6 text-gray-900">Pilih Kategori</label>
                         <div class="mt-2">
-                            <select id="category" name="category" class="w-full rounded-md border-0 bg-gray-100 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                <option value="Makanan" {{ $product->category === 'Makanan' ? 'selected' : '' }}>Makanan</option>
-                                <option value="Minuman" {{ $product->category === 'Minuman' ? 'selected' : '' }}>Minuman</option>
-                                <option value="Perabotan" {{ $product->category === 'Perabotan' ? 'selected' : '' }}>Perabotan</option>
-                                <option value="Sembako" {{ $product->category === 'Sembako' ? 'selected' : '' }}>Sembako</option>
-                                <option value="Obat-Obatan" {{ $product->category === 'Obat-Obatan' ? 'selected' : '' }}>Obat-Obatan</option>
-                                <option value="Lainnya" {{ $product->category === 'Lainnya' ? 'selected' : '' }}>Lainnya</option>
+                            <select id="category_id" name="category_id" class="w-full rounded-md border-0 bg-gray-100 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                @foreach($categories as $id => $category)
+                                    <option value="{{ $id }}" {{ $id == $product->category_id ? 'selected' : '' }}>{{ $category }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

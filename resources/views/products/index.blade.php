@@ -1,8 +1,11 @@
 <x-app-layout>
     <div class="p-4 mt-4 bg-white rounded-lg shadow-xs border">
-        <div class="flex items-center justify-end mb-6">
-            <a href="{{ route('products.create') }}" class="rounded-md bg-indigo-600 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add Product</a>
+        <div class="flex justify-end gap-3">
+            <div class="flex items-center justify-end mb-6">
+                <a href="{{ route('products.create') }}" class="rounded-md bg-indigo-600 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add Product</a>
+            </div>
         </div>
+
 
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs border">
             <div class="w-full overflow-x-auto shadow-xs">
@@ -31,7 +34,7 @@
                                     <div>
                                         <p class="font-semibold">{{ $product->name }}</p>
                                         <p class="text-xs text-black-800 dark:text-gray-400">
-                                            Kategori : {{ $product->category }}
+                                            Kategori : {{ $product->category ? $product->category->category_name : '' }}</div>
                                         </p>
                                     </div>
                                 </div>

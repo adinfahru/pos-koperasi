@@ -1,12 +1,12 @@
 <x-app-layout>
     <div class="p-12 mt-6 bg-white rounded-lg shadow-xs">
-        
+
         <form method="POST" action="{{ route('products.store')}}" enctype="multipart/form-data">
             @csrf
             <div class="space-y-12">
                 <div class="border-b border-gray-900/10 pb-12">
                     <h2 class="text-base font-semibold leading-7 text-gray-900">Tambah Produk</h2>
-                    
+
                     <div class="mt-5 space-y-6">
 
                         <div class="w-full">
@@ -26,16 +26,14 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="w-full">
                             <label for="category" class="block text-sm font-medium leading-6 text-gray-900">Pilih Kategori</label>
                             <div class="mt-2">
-                                <select id="category" name="category" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                    <option>Makanan</option>
-                                    <option>Minuman</option>
-                                    <option>Perabotan</option>
-                                    <option>Obat-Obatan</option>
-                                    <option>Lainnya</option>
+                                <select id="category" name="category_id" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                    @foreach($categories as $id => $category)
+                                    <option value="{{ $id }}">{{ $category }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
