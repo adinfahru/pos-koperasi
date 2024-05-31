@@ -87,40 +87,5 @@
         </div>
         <!-- Pembelian Stok -->
         <!-- Penjualan/Transaction History -->
-        <canvas id="transactionChart" width="400" height="200"></canvas>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-            <script>
-                // Ambil data transaksi dari PHP dan buat array untuk jumlah transaksi per bulan
-                var transactionData = {!! json_encode($transactionData) !!};
-
-                // Proses data untuk grafik
-                var labels = Object.keys(transactionData);
-                var data = Object.values(transactionData);
-
-                // Buat grafik menggunakan Chart.js
-                var ctx = document.getElementById('transactionChart').getContext('2d');
-                var transactionChart = new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: labels,
-                        datasets: [{
-                            label: 'Jumlah Transaksi per Bulan',
-                            data: data,
-                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }]
-                        }
-                    }
-                });
-            </script>
     </body>
 </x-app-layout>
