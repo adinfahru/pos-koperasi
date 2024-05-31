@@ -8,8 +8,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TransactionDetailController;
 use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfitController;
-use App\Http\Controllers\RecapController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -33,6 +33,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin', [AdminController::class, 'index'])->name('admin.index')->middleware(['auth']);;;
 
     Route::resource('products', ProductsController::class)->middleware(['auth']);;;
+    Route::resource('categories', CategoryController::class)->middleware(['auth']);;;
 
     Route::resource('transaction', TransactionController::class);
     Route::get('transaction/{id}', 'TransactionController@show')->name('transaction.show');

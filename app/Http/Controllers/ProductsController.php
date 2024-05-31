@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Products;
+use App\Models\Category;
 
 class ProductsController extends Controller
 {
@@ -11,10 +12,9 @@ class ProductsController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {   
-        $products = Products::all();
-        return view('products.index', ['products' => $products]);
-
+    {
+        $products = Products::with('category:id,category_name')->get();
+        return view('products.index', compact('products'));
     }
 
     /**
@@ -22,7 +22,8 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $categories = Category::pluck('category_name', 'id');
+        return view('products.create', compact('categories'));
     }
 
     /**
@@ -30,16 +31,16 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        
         $data = Products::create($request->all());
-        if ($request->hasFile('image')){
+
+        if ($request->hasFile('image')) {
             $request->file('image')->move('fotoProduk/', $request->file('image')->getClientOriginalName());
             $data->image = $request->file('image')->getClientOriginalName();
             $data->save();
         }
+
         return redirect()->route('products.index')->with('success', 'Product created successfully');
     }
-    
 
     /**
      * Display the specified resource.
@@ -55,7 +56,8 @@ class ProductsController extends Controller
     public function edit(string $id)
     {
         $product = Products::findOrFail($id);
-        return view('products.edit', compact('product'));
+        $categories = Category::pluck('category_name', 'id');
+        return view('products.edit', compact('product', 'categories'));
     }
 
     /**
@@ -64,12 +66,15 @@ class ProductsController extends Controller
     public function update(Request $request, string $id)
     {
         $product = Products::findOrFail($id);
+        $category = Category::find($request->category_id);
 
+        $product->code = $request->code;
         $product->name = $request->name;
-        $product->category = $request->category;
+        $product->category_id = $category->id;
         $product->stock = $request->stock;
         $product->price = $request->price;
         $product->purchase = $request->purchase;
+        $product->purchasing_date = $request->purchasing_date;
 
         // Check if a new image file has been uploaded (Kevin)
         if ($request->hasFile('image')) {
@@ -91,8 +96,7 @@ class ProductsController extends Controller
     {
 
         $product = Products::findOrFail($id);
-        $product ->delete();
-        return redirect()->route('products.index')->with('success','Product deleted successfully');
-        
+        $product->delete();
+        return redirect()->route('products.index')->with('success', 'Product deleted successfully');
     }
 }
