@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\PurchasingController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
@@ -45,6 +46,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     
     Route::get('/manager/stock', [StockController::class, 'lowStock'])->name('manager.stock');
     Route::get('/manager/profit', [ProfitController::class, 'index'])->name('manager.profit');
+    Route::get('/manager/purchasing', [PurchasingController::class, 'index'])->name('manager.purchasing');
 });
 
 Route::get('/anggota/dashboard', [AnggotaController::class, 'index'])->name('anggota.dashboard');
