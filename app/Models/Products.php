@@ -8,11 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Products extends Model
 {
     protected $fillable = [
-        'name', 
-        'category',
+        'code',
+        'name',
+        'category_id', // Change this line
         'stock',
         'price',
         'purchase',
-        'image',
+        'purchasing_date',
+        'image'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

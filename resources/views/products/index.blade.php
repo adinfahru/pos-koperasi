@@ -1,8 +1,11 @@
 <x-app-layout>
     <div class="p-4 mt-4 bg-white rounded-lg shadow-xs border">
-        <div class="flex items-center justify-end mb-6">
-            <a href="{{ route('products.create') }}" class="rounded-md bg-indigo-600 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add Product</a>
+        <div class="flex justify-end gap-3">
+            <div class="flex items-center justify-end mb-6">
+                <a href="{{ route('products.create') }}" class="rounded-md bg-indigo-600 px-6 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Add Product</a>
+            </div>
         </div>
+
 
         <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs border">
             <div class="w-full overflow-x-auto shadow-xs">
@@ -10,9 +13,11 @@
                     <thead>
                         <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 bg-gray-200 uppercase border">
                             <th class="px-4 py-3">Nama Produk</th>
+                            <th class="px-4 py-3">Kode Barang</th>
                             <th class="px-4 py-3">Stok</th>
                             <th class="px-4 py-3">Harga Jual</th>
                             <th class="px-4 py-3">Harga Beli</th>
+                            <th class="px-4 py-3">Tanggal Pembelian</th>
                             <th class="px-4 py-3">Actions</th>
                         </tr>
                     </thead>
@@ -29,10 +34,13 @@
                                     <div>
                                         <p class="font-semibold">{{ $product->name }}</p>
                                         <p class="text-xs text-black-800 dark:text-gray-400">
-                                            Kategori : {{ $product->category }}
+                                            Kategori : {{ $product->category ? $product->category->category_name : '' }}</div>
                                         </p>
                                     </div>
                                 </div>
+                            </td>
+                            <td class="px-4 py-3 text-sm uppercase">
+                                {{ $product->code }}
                             </td>
                             <td class="px-4 py-3 text-sm">
                                 {{ $product->stock }}
@@ -42,6 +50,9 @@
                             </td>
                             <td class="px-4 py-3 text-sm">
                                 Rp. {{ $product->purchase }}
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                {{ $product->purchasing_date }}
                             </td>
                             <td class="px-4 py-3">
                                 <div class="flex items-center space-x-4 text-sm">

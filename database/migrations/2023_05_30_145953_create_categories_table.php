@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('cashier_id');
-            $table->string('customer_id')->default('Unknown');
-            $table->bigInteger('total');
-            $table->enum('status', ['selesai', 'pending'])->default('pending');
+            $table->string('category_name')->unique();
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('categories');
     }
 };

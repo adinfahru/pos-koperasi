@@ -49,7 +49,11 @@
                             <td class="px-4 py-3 text-left">{{ $transaction->id }}</td>
                             <td class="px-4 py-3">{{ $transaction->created_at->timezone('Asia/Jakarta')->format('Y-m-d - H:i:s') }}</td>
                             <td class="px-4 py-3">{{ $transaction->customer? $transaction->customer->name : '' }}</td>
-                            <td class="px-4 py-3 capitalize">{{ $transaction->status }}</td>
+                            <td class="px-16 py-3 capitalize {{ $transaction->status == 'selesai' ? 'text-green-500 font-bold' : ($transaction->status == 'pending' ? 'text-yellow-500' : 'text-red-500') }}">
+                                <div class=" {{ $transaction->status == 'selesai' ? 'bg-green-200 py-1 rounded-full ' : ($transaction->status == 'pending' ? 'bg-yellow-200' : 'bg-red-200') }}">
+                                    {{ $transaction->status }}
+                                </div>
+                            </td>
                             <td class="px-4 py-3">Rp. {{ $transaction->total }}</td>
                             <td class="px-4 py-3">
                                 <a href="{{ route('transaction.show', $transaction->id) }}" class="rounded-md bg-teal-500 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-[#1B4F7C]">View</a>
