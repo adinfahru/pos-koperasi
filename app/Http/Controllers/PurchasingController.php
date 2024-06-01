@@ -11,6 +11,6 @@ class PurchasingController extends Controller
     public function index()
     {
         $products = Products::with('category:id,category_name')->get();
-        return view('purchasing.index', compact('products'));
+        return view('manager.purchasing', compact('products'));
     }
 }

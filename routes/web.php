@@ -46,7 +46,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     
     Route::get('/manager/stock', [StockController::class, 'lowStock'])->name('manager.stock');
     Route::get('/manager/profit', [ProfitController::class, 'index'])->name('manager.profit');
-    Route::get('purchasing', [PurchasingController::class, 'index'])->name('purchasing.index');
+    Route::get('/manager/purchasing', [PurchasingController::class, 'index'])->name('manager.purchasing');
 });
 
 Route::get('/anggota/dashboard', [AnggotaController::class, 'index'])->name('anggota.dashboard');
