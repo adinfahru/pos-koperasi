@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Products;
 use App\Models\Category;
+use App\Models\PurchaseReport;
 
 class ProductsController extends Controller
 {
@@ -39,8 +40,17 @@ class ProductsController extends Controller
             $data->save();
         }
 
+        // Simpan data pembelian ke tabel purchase_reports
+        PurchaseReport::create([
+            'product_id' => $data->id,
+            'quantity' => $request->input('stock'),
+            'price' => $request->input('purchase'),
+            'purchase_date' => $request->input('purchasing_date'),
+        ]);
+
         return redirect()->route('products.index')->with('success', 'Product created successfully');
     }
+
 
     /**
      * Display the specified resource.
