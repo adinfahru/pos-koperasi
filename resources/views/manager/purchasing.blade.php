@@ -14,35 +14,35 @@
                     <thead>
                     <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase bg-gray-200 border-b">
                         <th class="px-4 py-3">Kode Barang</th>
-                        <th class="px-4 py-3">Name</th>
-                        <th class="px-4 py-3">Stok</th>
+                        <th class="px-4 py-3">Nama</th>
+                        <th class="px-4 py-3">Jumlah</th>
                         <th class="px-4 py-3">Harga Beli</th>
                         <th class="px-4 py-3">Tanggal Pembelian</th>
                     </tr>
                     </thead>
                     <tbody class="bg-white divide-y dark:divide-gray-300 dark:bg-gray-50">
-                        @forelse ($products as $product)
+                        @forelse ($purchaseReports as $report)
                         <tr class="text-gray-700 dark:text-gray-600">
                             <td class="px-4 py-3 text-sm uppercase">
-                                {{$product->code}}
+                                {{$report->product->code}}
                             </td>
                             <td class="px-4 py-3 text-sm">
-                                {{$product->name}}
+                                {{$report->product->name}}
                             </td>
                             <td class="px-4 py-3 text-sm">
-                                {{$product->stock}}
+                                {{$report->quantity}}
                             </td>
                             <td class="px-4 py-3 text-sm">
-                                Rp. {{$product->purchase * $product->stock}}
+                                Rp. {{$report->price}}
                             </td>
                             <td class="px-4 py-3 text-sm">
-                                {{$product->purchasing_date}}
+                                {{$report->purchase_date}}
                             </td>
                         </tr>
                         @empty
                         <tr>
-                            <td class="text-sm px-4 py-6 bg-white dark:text-gray-400">
-                                Belum ada produk!
+                            <td colspan="5" class="text-sm px-4 py-6 bg-white dark:text-gray-400">
+                                Belum ada laporan pembelian!
                             </td>
                         </tr>
                         @endforelse

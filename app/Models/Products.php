@@ -22,4 +22,9 @@ class Products extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function purchaseReports()
+    {
+        return $this->hasMany(PurchaseReport::class, 'product_id');
+    }
 }
