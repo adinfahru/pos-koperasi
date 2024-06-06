@@ -22,7 +22,7 @@ class CategoriesTableSeeder extends Seeder
             ['category_name' => 'Obat'],
             ['category_name' => 'Perabotan'],
             ['category_name' => 'Snack'],
-            ['category_name' => ''],
+            ['category_name' => 'Lainnya'],
         ];
 
         DB::table('categories')->insert($categories);

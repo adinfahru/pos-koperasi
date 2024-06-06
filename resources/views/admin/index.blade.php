@@ -33,7 +33,7 @@
                         Total Sales
                     </p>
                     <p class="text-md font-semibold">
-                        {{$totalSales}}
+                        {{format_rupiah($totalSales)}}
                     </p>
                 </div>
             </div>

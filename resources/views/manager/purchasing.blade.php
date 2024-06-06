@@ -53,10 +53,10 @@
                                 {{$report->quantity}}
                             </td>
                             <td class="px-4 py-3 text-sm">
-                                Rp. {{$report->price}}
+                                Rp. {{format_rupiah($report->price)}}
                             </td>
                             <td class="px-4 py-3 text-sm">
-                                Rp. {{$report->total}}
+                                Rp. {{format_rupiah($report->total)}}
                             </td>
                             <td class="px-4 py-3 text-sm">
                                 {{$report->purchase_date}}
