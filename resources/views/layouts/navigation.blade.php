@@ -122,7 +122,7 @@
                 </x-nav-link>
             </li>
 
-            <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('') ? 'bg-blue-100 rounded-md' : '' }}">
+            <li class="relative px-6 py-3 rounded-md transition duration-300 ease-in-out hover:bg-blue-200 {{ request()->routeIs('manager.profit') ? 'bg-blue-100 rounded-md' : '' }}">
                 <x-nav-link href="{{ route('manager.profit')}}" :active="request()->routeIs('manager.profit')">
                     <x-slot name="icon">
                         <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">

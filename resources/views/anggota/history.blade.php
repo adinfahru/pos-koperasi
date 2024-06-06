@@ -30,7 +30,7 @@
                             {{ $transaction->created_at->format('Y-m-d')}}
                         </td>
                         <td class="px-6 py-4 dark:text-black">
-                            {{ $transaction->total}}
+                            {{ format_rupiah($transaction->total)}}
                         </td>
                         <td class="px-6 py-4 dark:text-black capitalize">
                             {{ $transaction->status}}

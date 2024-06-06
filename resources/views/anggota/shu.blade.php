@@ -10,12 +10,12 @@
             <div class="bg-white p-3 overflow-hidden border shadow-xl rounded-xl flex items-center flex-col justify-center">
                 <h1 class="text-center text-lg">Total Point Anda</h1>
                 <br>
-                <h1 class="text-center text-3xl">{{ $totalCustomerPoints }}</h1>
+                <h1 class="text-center text-2xl">{{ $totalCustomerPoints }}</h1>
             </div>
             <div class="bg-white w-96 h-40 p-5 overflow-hidden border shadow-xl rounded-xl flex items-center flex-col justify-center">
                 <h1 class="text-center text-xl">Nilai SHU Anda</h1>
                 <br>
-                <h1 class="text-center text-3xl">Rp {{ $formattedShu }}</h1>
+                <h1 class="text-center text-2xl">Rp {{ $formattedShu }}</h1>
             </div>
         </div>
     </div>
