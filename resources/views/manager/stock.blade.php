@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="p-4 mt-4 bg-white rounded-lg shadow-xs border text-xs">
+    <div class="p-4 mt-4 bg-white rounded-lg shadow-xs border text-sm">
         <div class="container">
             <h1 class="text-xl font-semibold mb-4">Low Stock Products</h1>
             @if ($lowStockProducts->isEmpty())
@@ -18,7 +18,7 @@
                         @foreach ($lowStockProducts as $product)
                             <tr class="text-gray-700">
                                 <td class="px-4 py-3">{{ $product->name }}</td>
-                                <td class="px-4 py-3">{{ $product->category }}</td>
+                                <td class="px-4 py-3">{{ $product->category->category_name }}</td>
                                 <td class="px-4 py-3">{{ $product->stock }}</td>
                                 <td class="px-4 py-3">{{ $product->price }}</td>
                             </tr>

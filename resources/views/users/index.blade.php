@@ -25,7 +25,7 @@
                             <td class="px-4 py-3 text-sm">
                                 {{ $user->email }}
                             </td>
-                            <td class="px-4 py-3 text-sm">
+                            <td class="px-4 py-3 text-sm capitalize">
                                 {{ $user->role }}
                             </td>
                             <td class="px-4 py-3">

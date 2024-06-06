@@ -54,7 +54,7 @@
                                     {{ $transaction->status }}
                                 </div>
                             </td>
-                            <td class="px-4 py-3">Rp. {{ $transaction->total }}</td>
+                            <td class="px-4 py-3">Rp. {{ format_rupiah($transaction->total)}}</td>
                             <td class="px-4 py-3">
                                 <a href="{{ route('transaction.show', $transaction->id) }}" class="rounded-md bg-teal-500 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-[#1B4F7C]">View</a>
                             </td>

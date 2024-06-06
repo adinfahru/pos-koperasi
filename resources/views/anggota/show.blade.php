@@ -31,11 +31,11 @@
                                     </tr>
                                     <tr class="text-gray-500 dark:text-gray-600">
                                         <th class="text-left px-8 py-2"><strong>Status:</strong></th>
-                                        <td class="text-right px-20 py-2">{{ $transaction->status }}</td>
+                                        <td class="text-right px-20 py-2 capitalize">{{ $transaction->status }}</td>
                                     </tr>
                                     <tr class="text-gray-500 dark:text-gray-600">
                                         <th class="text-left px-8 py-2"><strong>Total:</strong></th>
-                                        <td class="text-right px-20 py-2">{{ $transaction->total }}</td>
+                                        <td class="text-right px-20 py-2">{{ format_rupiah($transaction->total) }}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -56,7 +56,7 @@
                             <tr>
                                 <td class="px-4 py-2 text-black">{{ $detail->product_name }}</td>
                                 <td class="px-4 py-2 text-black">{{ $detail->qty }}</td>
-                                <td class="px-4 py-2 text-black">{{ $detail->subtotal }}</td>
+                                <td class="px-4 py-2 text-black">{{ format_rupiah($detail->subtotal) }}</td>
                             </tr>
                             @endforeach
                         </tbody>

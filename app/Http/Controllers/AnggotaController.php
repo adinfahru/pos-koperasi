@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PurchaseReport;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\PurchaseReport;
 use App\Models\Transaction;
 use App\Models\TransactionDetail;
 

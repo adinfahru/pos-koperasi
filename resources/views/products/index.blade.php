@@ -46,10 +46,10 @@
                                 {{ $product->stock }}
                             </td>
                             <td class="px-4 py-3 text-sm">
-                                Rp. {{ $product->price }}
+                                Rp. {{ format_rupiah($product->price) }}
                             </td>
                             <td class="px-4 py-3 text-sm">
-                                Rp. {{ $product->purchase }}
+                                Rp. {{ format_rupiah($product->purchase) }}
                             </td>
                             <td class="px-4 py-3 text-sm">
                                 {{ $product->purchasing_date }}
