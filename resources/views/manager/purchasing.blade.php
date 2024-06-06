@@ -36,6 +36,7 @@
                         <th class="px-4 py-3">Nama</th>
                         <th class="px-4 py-3">Jumlah</th>
                         <th class="px-4 py-3">Harga Beli</th>
+                        <th class="px-4 py-3">Total Pembelian</th>
                         <th class="px-4 py-3">Tanggal Pembelian</th>
                     </tr>
                     </thead>
@@ -53,6 +54,9 @@
                             </td>
                             <td class="px-4 py-3 text-sm">
                                 Rp. {{$report->price}}
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                Rp. {{$report->total}}
                             </td>
                             <td class="px-4 py-3 text-sm">
                                 {{$report->purchase_date}}
