@@ -14,7 +14,18 @@ class PurchaseReport extends Model
         'quantity',
         'price',
         'purchase_date',
+        'total'
     ];
+
+    public static function boot()
+    {
+        parent::boot();
+
+        // Hook untuk menghitung total sebelum menyimpan data
+        static::saving(function ($model) {
+            $model->total = $model->quantity * $model->price;
+        });
+    }
 
     public function product()
     {

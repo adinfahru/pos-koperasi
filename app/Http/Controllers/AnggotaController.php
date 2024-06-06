@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PurchaseReport;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Transaction;
@@ -71,15 +72,43 @@ class AnggotaController extends Controller
 
     public function shu()
     {
-        // Mendapatkan total transaksi dari pelanggan yang sedang login
-        $totalTransactions = Transaction::where('customer_id', auth()->user()->id)->count();
 
-        // Menghitung nilai SHU berdasarkan jumlah transaksi
-        $shuValue = $totalTransactions * 1000; // Misalnya, nilai SHU per transaksi adalah 1000
+        // $totalTransactions = Transaction::where('customer_id', auth()->user()->id)->count();
+        // $shuValue = $totalTransactions * 1000;
+        // $formattedShu = number_format($shuValue, 0, ',', '.');
+        // return view('anggota.shu', compact('formattedShu', 'totalTransactions'));
 
-        // Memformat nilai SHU menjadi format rupiah
+        // Get the current logged-in user's ID
+        $customerId = auth()->user()->id;
+
+        // Calculate total points for the current customer (number of transactions)
+        $totalCustomerPoints = Transaction::where('customer_id', $customerId)
+            ->where('status', 'selesai')
+            ->count();
+
+        // Calculate total points for all customers (number of transactions)
+        $totalAllPoints = Transaction::where('status', 'selesai')->count();
+
+        // Calculate total income from koperasi (sum of all completed transactions)
+        $totalIncome = Transaction::where('status', 'selesai')->sum('total');
+
+        // Calculate total purchases (sum of total from purchase_reports)
+        $totalPurchases = PurchaseReport::sum('total');
+
+        // Calculate net income by subtracting total purchases from total income
+        $netIncome = $totalIncome - $totalPurchases;
+
+        // Prevent division by zero if there are no transactions
+        if ($totalAllPoints == 0) {
+            $shuValue = 0;
+        } else {
+            // Calculate SHU value using the formula
+            $shuValue = ($totalCustomerPoints / $totalAllPoints) * $netIncome;
+        }
+
+        // Format SHU value for display
         $formattedShu = number_format($shuValue, 0, ',', '.');
 
-        return view('anggota.shu', compact('formattedShu', 'totalTransactions'));
+        return view('anggota.shu', compact('formattedShu', 'totalCustomerPoints'));
     }
 }
