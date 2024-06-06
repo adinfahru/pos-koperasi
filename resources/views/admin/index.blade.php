@@ -2,7 +2,7 @@
     <x-slot name="header">
         {{ Auth::user()->name }} Dashboard
     </x-slot>
-
+    <body>
     <div class="mt-5  rounded-lg shadow-xs">
         <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
             <!-- Card -->
@@ -60,49 +60,107 @@
                         <path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0" />
                     </svg>
                 </div>
-        </div>
-        <!-- Pembelian Stok -->
-        <!-- Penjualan/Transaction History -->
-        <!-- Ambil dari database -->
-
-        <!-- Close dari database -->
-        <div class="flex items-center justify-center">
-            <div class="my-12 mx-5 max-w-screen-lg w-full flex justify-center">
-                <canvas id="myChart"></canvas>
+                <div>
+                    <p class="mb-2 text-sm font-medium">
+                        Products
+                    </p>
+                    <p class="text-md font-semibold">
+                        {{$products->count()}}
+                    </p>
+                </div>
+                <!-- Card -->
             </div>
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const ctx = document.getElementById('myChart').getContext('2d');
-
-                    const transactionData = @json($transactionsData);
-
-                    const labels = transactionData.map(data => data.month);
-                    const dataPoints = transactionData.map(data => data.total);
-
-                    new Chart(ctx, {
-                        type: 'line',
-                        data: {
-                            labels: labels,
-                            datasets: [{
-                                label: 'Total transaksi per bulan',
-                                data: dataPoints,
-                                borderWidth: 2,
-                                borderColor: 'rgba(75, 192, 192, 1)',
-                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                                fill: true,
-                            }]
-                        },
-                        options: {
-                            scales: {
-                                y: {
-                                    beginAtZero: true
-                                }
-                            }
-                        }
-                    })
-                })
-            </script>
-        </div>
-    </body>
+            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs border">
+                <div class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div>
+                    <p class="mb-2 text-sm font-medium">
+                        Total Category
+                    </p>
+                    <p class="text-md font-semibold">
+                        {{$totalCategory}}
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs border">
+                <div class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div>
+                    <p class="mb-2 text-sm font-medium">
+                        Total Income
+                    </p>
+                    <p class="text-md font-semibold">
+                        {{$totalIncome}}
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs border">
+                <div class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div>
+                    <p class="mb-2 text-sm font-medium">
+                        Total Expenses
+                    </p>
+                    <p class="text-md font-semibold">
+                        {{$totalPurchases}}
+                    </p>
+                </div>
+            </div>
+            <div class="flex items-center p-4 bg-white rounded-lg shadow-xs border">
+                <div class="p-3 mr-4 text-green-500 bg-green-100 rounded-full dark:text-green-100 dark:bg-green-500">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div>
+                    <p class="mb-2 text-sm font-medium">
+                        Total Profit
+                    </p>
+                    <p class="text-md font-semibold">
+                        {{$profit}}
+                    </p>
+                </div>
+            </div>
+            <div class="mx-auto border">
+            <table class="w-full whitespace-no-wrap shadow-xl text-sm text-center rtl:text-right text-gray-500">
+                    <thead class="text-xs font-semibold tracking-wide text-center text-white bg-[#1B4F7C] uppercase">
+                        <tr class="">
+                            <th class="px-4 py-3 text-left w-[150px]">Transaction ID</th>
+                            <th class="px-4 py-3">Date & Hour</th>
+                            <th class="px-4 py-3">Customer Name</th>
+                            <th class="px-4 py-3">Transaction Status</th>
+                            <th class="px-4 py-3">Total</th>
+                            <th class="px-4 py-3">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($transactions as $transaction)
+                        <tr>
+                            <td class="px-4 py-3 text-left">{{ $transaction->id }}</td>
+                            <td class="px-4 py-3">{{ $transaction->created_at->timezone('Asia/Jakarta')->format('Y-m-d - H:i:s') }}</td>
+                            <td class="px-4 py-3">{{ $transaction->customer? $transaction->customer->name : '' }}</td>
+                            <td class="px-16 py-3 capitalize {{ $transaction->status == 'selesai' ? 'text-green-500 font-bold' : ($transaction->status == 'pending' ? 'text-yellow-500' : 'text-red-500') }}">
+                                <div class=" {{ $transaction->status == 'selesai' ? 'bg-green-200 py-1 rounded-full ' : ($transaction->status == 'pending' ? 'bg-yellow-200' : 'bg-red-200') }}">
+                                    {{ $transaction->status }}
+                                </div>
+                            </td>
+                            <td class="px-4 py-3">Rp. {{ format_rupiah($transaction->total)}}</td>
+                            <td class="px-4 py-3">
+                                <a href="{{ route('transaction.show', $transaction->id) }}" class="rounded-md bg-teal-500 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-[#1B4F7C]">View</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </body>
 </x-app-layout>
