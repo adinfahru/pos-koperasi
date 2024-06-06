@@ -8,13 +8,13 @@
                 <!-- Main -->
                 <div class="mt-5 mb-10 flex justify-center">
                         <div
-                            class="mx-3 my-5 w-[350px] aspect-video rounded-lg shadow flex flex-col items-center justify-center gap-2 bg-slate-50 group"
+                            class="mx-6 my-5 w-[250px] aspect-video rounded-lg shadow flex flex-col items-center justify-center gap-2 bg-slate-50 group"
                             >
                             <div
                                 class="flex flex-col items-center p-8 rounded-md w-full sm:px-12 bg-indigo-900 text-white"
                             >
                                 <div class="text-center">
-                                <h2 class="text-xl font-semibold">Anggota Koperasi</h2>
+                                <h2 class="text-xl font-semibold">Anggota</h2>
                                 <p class="text-sm text-gray-300">Total Anggota Koperasi</p>
                                 </div>
                                 <svg
@@ -33,7 +33,7 @@
                             </div>
                         </div>
                         <div
-                            class="mx-3 my-5 w-[350px] aspect-video rounded-lg shadow flex flex-col items-center justify-center gap-2 bg-slate-50 group"
+                            class="mx-6 my-5 w-[250px] aspect-video rounded-lg shadow flex flex-col items-center justify-center gap-2 bg-slate-50 group"
                             >
                             <div
                                 class="flex flex-col items-center p-8 rounded-md w-full sm:px-12 bg-indigo-900 text-white"
@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <div
-                            class="mx-3 my-5 w-[350px] aspect-video rounded-lg shadow flex flex-col items-center justify-center gap-2 bg-slate-50 group"
+                            class="mx-6 my-5 w-[250px] aspect-video rounded-lg shadow flex flex-col items-center justify-center gap-2 bg-slate-50 group"
                             >
                             <div
                                 class="flex flex-col items-center p-8 rounded-md w-full sm:px-12 bg-indigo-900 text-white"
@@ -87,5 +87,46 @@
         </div>
         <!-- Pembelian Stok -->
         <!-- Penjualan/Transaction History -->
+        <!-- Ambil dari database -->
+
+        <!-- Close dari database -->
+        <div class="flex items-center justify-center">
+            <div class="my-12 mx-5 max-w-screen-lg w-full flex justify-center">
+                <canvas id="myChart"></canvas>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const ctx = document.getElementById('myChart').getContext('2d');
+
+                    const transactionData = @json($transactionsData);
+
+                    const labels = transactionData.map(data => data.month);
+                    const dataPoints = transactionData.map(data => data.total);
+
+                    new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Total transaksi per bulan',
+                                data: dataPoints,
+                                borderWidth: 2,
+                                borderColor: 'rgba(75, 192, 192, 1)',
+                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                fill: true,
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    })
+                })
+            </script>
+        </div>
     </body>
 </x-app-layout>
