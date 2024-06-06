@@ -20,8 +20,8 @@
                                 <p class="text-gray-600">: {{ $transaction->customer ? $transaction->customer->name : '' }}</p>
                                 <p class="text-gray-600">: {{ $transaction->created_at->timezone('Asia/Jakarta')->format('d-m-Y') }}</p>
                                 <p class="text-gray-600">: {{ $transaction->created_at->timezone('Asia/Jakarta')->format('H:i:s') }}</p>
-                                <p class="text-gray-600">: {{ $transaction->status }}</p>
-                                <p class="text-gray-600">: {{ $transaction->total }}</p>
+                                <p class="text-gray-600 capitalize">: {{ $transaction->status }}</p>
+                                <p class="text-gray-600">: {{ format_rupiah($transaction->total)}}</p>
                             </div>
                         </div>
                         <div class="overflow-x-auto rounded-lg shadow-lg">
@@ -38,7 +38,7 @@
                                     <tr>
                                         <td class="px-4 py-2 font-semibold">{{ $detail->product_name }}</td>
                                         <td class="px-4 py-2">{{ $detail->qty }}</td>
-                                        <td class="px-4 py-2">{{ $detail->subtotal }}</td>
+                                        <td class="px-4 py-2">{{ format_rupiah($detail->subtotal)}}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>

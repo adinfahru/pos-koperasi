@@ -120,7 +120,7 @@
                     <div class="lg:col-start-1 lg:col-span-2">
                         <div>
                             <div class="relative h-full p-2 overflow-hidden border rounded-3xl">
-                                <img src="{{ asset('images/Laravel.png') }}" class="object-cover h-full border shadow-2xl rounded-2xl">
+                                <img src="{{ asset('images/score.png') }}" class="mx-auto object-cover w-60 border shadow-2xl rounded-2xl">
                             </div>
                         </div>
                     </div>
@@ -142,7 +142,7 @@
                     <div class="lg:col-span-2">
                         <div>
                             <div class="relative h-full p-2 overflow-hidden border rounded-3xl">
-                                <img src="{{ asset('images/Laravel.png') }}" class="object-cover h-full border shadow-2xl rounded-2xl">
+                                <img src="{{ asset('images/bill.png') }}" class="mx-auto object-cover h-full w-60 border shadow-2xl rounded-2xl">
                             </div>
                         </div>
                     </div>
@@ -163,7 +163,7 @@
                     <div class="lg:col-start-1 lg:col-span-2">
                         <div>
                             <div class="relative h-full p-2 overflow-hidden border rounded-3xl">
-                                <img src="{{ asset('images/Laravel.png') }}" class="object-cover h-full border shadow-2xl rounded-2xl">
+                                <img src="{{ asset('images/salary.png') }}" class="mx-auto object-cover h-full w-60 border shadow-2xl rounded-2xl">
                             </div>
                         </div>
                     </div>
@@ -175,7 +175,7 @@
                     <div class="grid gap-2 mt-2 text-center md:grid-cols-3">
                         <div>
                             <div class="p-2 overflow-hidden border rounded-3xl">
-                                <img src="{{ asset('images/Laravel.png') }}" alt="#_" class="w-full h-full mx-auto rounded-2xl">
+                                <img src="{{ asset('images/repeat.png') }}" alt="#_" class="w-40 mx-auto rounded-2xl">
                             </div>
                             <div class="mt-4">
                                 <p class="font-medium text-gray-900">Laporan Rekap Bulanan Anggota</p>
@@ -183,7 +183,7 @@
                         </div>
                         <div>
                             <div class="p-2 overflow-hidden border rounded-3xl">
-                                <img src="{{ asset('images/Laravel.png') }}" alt="#_" class="w-full h-full mx-auto rounded-2xl">
+                                <img src="{{ asset('images/customer-support.png') }}" alt="#_" class="w-40 mx-auto rounded-2xl">
                             </div>
                             <div class="px-8 mt-4">
                                 <p class="font-medium text-gray-900">Customer Service 24/7</p>
@@ -191,7 +191,7 @@
                         </div>
                         <div>
                             <div class="p-2 overflow-hidden border rounded-3xl">
-                                <img src="{{ asset('images/Laravel.png') }}" alt="#_" class="w-full h-full mx-auto rounded-2xl">
+                                <img src="{{ asset('images/salary.png') }}" alt="#_" class="w-40 mx-auto rounded-2xl">
                             </div>
                             <div class="px-8 mt-4">
                                 <p class="font-medium text-gray-900">SHU yang Bersaing</p>
