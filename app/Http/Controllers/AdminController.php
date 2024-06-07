@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Products;
@@ -10,19 +11,37 @@ use App\Models\PurchaseReport;
 
 class AdminController extends Controller
 {
-    public function index()
-    {   
-        
+    public function index(Request $request)
+    {
+
         $products = Products::all();
         $users = User::all();
-        $transactions = Transaction::all();
+        // $transactions = Transaction::all();
         $totalSales = Transaction::sum('total');
         $totalCategory = Category::count('id');
-        return view('admin.index', compact('products','users','transactions','totalSales','totalCategory'));
-        
 
+        $year = $request->input('year', date('Y'));
+
+        $transactions = Transaction::whereYear('created_at', $year)->where('status', 'selesai')->get();
+        $totalIncome = $transactions->sum('total');
+
+        $purchases = PurchaseReport::whereYear('purchase_date', $year)->get();
+        $totalPurchases = $purchases->sum('total');
+
+        $profit = $totalIncome - $totalPurchases;
+
+        $transactions = Transaction::with('customer')->orderBy('created_at', 'desc')->paginate(5);
+
+        $leaderboard = Transaction::select('customer_id')
+            ->selectRaw('count(*) as transaction_count')
+            ->groupBy('customer_id')
+            ->orderByDesc('transaction_count')
+            ->limit(5)
+            ->get();
+
+        return view('admin.index', compact('products', 'users', 'transactions', 'totalSales', 'totalCategory', 'totalIncome', 'totalPurchases', 'profit', 'leaderboard'));
     }
-    public function sales_report(Request $request)
+    public function sales_report()
     {
         $year = $request->input('year', date('Y'));
 
@@ -36,7 +55,7 @@ class AdminController extends Controller
         $profit = $totalIncome - $totalPurchases;
 
 
-        return view('manager.profit', compact('totalIncome', 'totalPurchases', 'profit', 'data', 'year'));
+        return view('admin.index', compact('totalIncome', 'totalPurchases', 'profit', 'data', 'year'));
     }
     public function Top_Leaderboard()
     {
@@ -54,12 +73,8 @@ class AdminController extends Controller
         return $leaderboard;
     }
     public function latest_transaction()
-{
-    $latestTransactions = Transaction::select('transactions')
-        ->orderBy('created_at', 'desc')
-        ->limit(5)
-        ->get();
+    {
 
-    return view('admin.latest_transactions', compact('latestTransactions'));
-}
+        return view('admin.latest_transactions', compact('latestTransactions'));
+    }
 }
