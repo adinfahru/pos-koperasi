@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Products;
@@ -11,8 +12,8 @@ use App\Models\PurchaseReport;
 class AdminController extends Controller
 {
     public function index(Request $request)
-    {   
-        
+    {
+
         $products = Products::all();
         $users = User::all();
         // $transactions = Transaction::all();
@@ -31,10 +32,14 @@ class AdminController extends Controller
 
         $transactions = Transaction::with('customer')->orderBy('created_at', 'desc')->paginate(5);
 
+        $leaderboard = Transaction::select('customer_id')
+            ->selectRaw('count(*) as transaction_count')
+            ->groupBy('customer_id')
+            ->orderByDesc('transaction_count')
+            ->limit(5)
+            ->get();
 
-        return view('admin.index', compact('products','users','transactions','totalSales','totalCategory', 'totalIncome', 'totalPurchases', 'profit',));
-        
-
+        return view('admin.index', compact('products', 'users', 'transactions', 'totalSales', 'totalCategory', 'totalIncome', 'totalPurchases', 'profit', 'leaderboard'));
     }
     public function sales_report()
     {
@@ -68,8 +73,8 @@ class AdminController extends Controller
         return $leaderboard;
     }
     public function latest_transaction()
-{
-   
-    return view('admin.latest_transactions', compact('latestTransactions'));
-}
+    {
+
+        return view('admin.latest_transactions', compact('latestTransactions'));
+    }
 }
