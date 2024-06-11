@@ -7,9 +7,9 @@ This Capstone project aims to develop a Point of Sale (POS) website application 
 ## Feature
 
 - Auth (Admin, Cashier, Manager)
-- Cashier Managemenet
+- Cashier Management
 - Stock Management
-- Report 
+- Report Management
 
 ## Landing Page
 
